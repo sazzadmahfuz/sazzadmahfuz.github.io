@@ -213,6 +213,106 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
     <h2 class="section-title">Featured Work</h2>
   </div>
   <div class="projects-grid">
+    <!-- NEW P1: Control Systems -->
+    <div class="project-card reveal">
+      <div class="project-preview">
+        <canvas id="ctrl-preview"></canvas>
+      </div>
+      <div class="project-body">
+        <div class="project-tag">PLC · Beckhoff · TwinCAT</div>
+        <h3 class="project-title">PLC Control Systems</h3>
+        <p class="project-desc">Beckhoff EtherCAT PLC control system with state-machine-driven robot arm pick-and-place, LM35 temperature supervision, refrigerator control, and live TwinCAT VISU. Built for Control Systems course at HAMK.</p>
+        <div class="project-stack">
+          <span class="tech-pill">TwinCAT 3</span><span class="tech-pill">Structured Text</span><span class="tech-pill">EtherCAT</span><span class="tech-pill">Beckhoff</span><span class="tech-pill">IEC 61131-3</span>
+        </div>
+        <div class="project-links">
+          <a href="projects/control-systems/index.html" class="project-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live Demo
+          </a>
+          <a href="https://github.com/sazzadmahfuz/control-systems-plc" target="_blank" class="project-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            Source
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW P2: Machine Vision -->
+    <div class="project-card reveal">
+      <div class="project-preview">
+        <canvas id="vision-preview"></canvas>
+      </div>
+      <div class="project-body">
+        <div class="project-tag">Computer Vision · Python · OpenCV</div>
+        <h3 class="project-title">Machine Vision Pipeline</h3>
+        <p class="project-desc">End-to-end computer vision pipeline: RGB channel separation, Otsu segmentation with CLAHE, connected-component detection, and camera–robot homography mapping for Dobot MG400 pick-and-place. Python + OpenCV + RoboDK.</p>
+        <div class="project-stack">
+          <span class="tech-pill">Python</span><span class="tech-pill">OpenCV</span><span class="tech-pill">RoboDK</span><span class="tech-pill">Homography</span><span class="tech-pill">Segmentation</span>
+        </div>
+        <div class="project-links">
+          <a href="projects/machine-vision/index.html" class="project-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live Demo
+          </a>
+          <a href="https://github.com/sazzadmahfuz/Machine-Vision" target="_blank" class="project-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            Source
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW P3: Database Design -->
+    <div class="project-card reveal">
+      <div class="project-preview">
+        <canvas id="db-preview"></canvas>
+      </div>
+      <div class="project-body">
+        <div class="project-tag">Database · MySQL · ER Modelling</div>
+        <h3 class="project-title">Student Course Registration DB</h3>
+        <p class="project-desc">Full relational database for a university registration system: ER diagram (7 entities, Crow's Foot), normalised to 3NF, MySQL DDL/DML with JOINs, GROUP BY, subqueries, and an interactive SQL console. Team 7 project.</p>
+        <div class="project-stack">
+          <span class="tech-pill">MySQL 8.0</span><span class="tech-pill">SQL</span><span class="tech-pill">ER Modelling</span><span class="tech-pill">3NF</span><span class="tech-pill">JavaScript</span>
+        </div>
+        <div class="project-links">
+          <a href="projects/database-design/index.html" class="project-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live Demo
+          </a>
+          <a href="https://github.com/sazzadmahfuz/database-design-project" target="_blank" class="project-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            Source
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW P4: Machine Learning -->
+    <div class="project-card reveal">
+      <div class="project-preview">
+        <canvas id="ml-preview"></canvas>
+      </div>
+      <div class="project-body">
+        <div class="project-tag">Machine Learning · Scikit-learn · Python</div>
+        <h3 class="project-title">Employee Attrition Prediction</h3>
+        <p class="project-desc">KNN vs Gaussian Naive Bayes on IBM HR Analytics dataset (1470 employees). Feature engineering, StandardScaler, K-optimisation loop, confusion matrices, and model comparison. Best accuracy 85% with KNN k=7.</p>
+        <div class="project-stack">
+          <span class="tech-pill">Python</span><span class="tech-pill">Scikit-learn</span><span class="tech-pill">KNN</span><span class="tech-pill">Naive Bayes</span><span class="tech-pill">Pandas</span>
+        </div>
+        <div class="project-links">
+          <a href="projects/machine-learning/index.html" class="project-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live Demo
+          </a>
+          <a href="https://github.com/sazzadmahfuz/ml-employee-attrition" target="_blank" class="project-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            Source
+          </a>
+        </div>
+      </div>
+    </div>
+
 
     <!-- P1: IoT Monitor -->
     <div class="project-card reveal">
@@ -328,6 +428,8 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
     <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(0,255,209,.1)">🤖</div><div><div class="cert-issuer">Universal Robots Academy</div><div class="cert-name">e-Series Core Track</div><div class="cert-date">Apr 2025</div></div></div>
     <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(20,99,255,.15)">🌐</div><div><div class="cert-issuer">Cisco / HAMK</div><div class="cert-name">CCNA: Introduction to Networks</div><div class="cert-date">Mar 2025</div></div></div>
     <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(123,97,255,.15)">🐍</div><div><div class="cert-issuer">Robocorp</div><div class="cert-name">Python Automation Certification</div><div class="cert-date">Nov 2024 · ID: d38fbb43</div></div></div>
+    <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(59,130,246,.1)">📊</div><div><div class="cert-issuer">Simplilearn SkillUp</div><div class="cert-name">Data Science with Python</div><div class="cert-date">Nov 2023 · Code: 4626023</div></div></div>
+    <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(123,97,255,.1)">🏗️</div><div><div class="cert-issuer">Udemy</div><div class="cert-name">Software Architecture</div><div class="cert-date">Nov 2023 · UC-1210a96e</div></div></div>
     <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(255,200,0,.1)">🛡️</div><div><div class="cert-issuer">Finland</div><div class="cert-name">Occupational Safety Card</div><div class="cert-date">Valid to Mar 2030</div></div></div>
   </div>
 </section>
@@ -573,6 +675,136 @@ counters.forEach(c=>cio.observe(c));
     requestAnimationFrame(draw);
   }draw();
 })();
+
+// ── NEW PREVIEW: Control Systems ──
+(function(){
+  const c=document.getElementById('ctrl-preview');if(!c)return;
+  c.width=c.offsetWidth||500;c.height=200;
+  const ctx=c.getContext('2d');
+  const states=['Idle','ReqP2','WaitP2','Cooling','ReqP3','WaitP3','Done','Fault'];
+  let cur=0,t=0,temp=24;
+  function draw(){
+    ctx.fillStyle='#0D1117';ctx.fillRect(0,0,c.width,200);
+    ctx.strokeStyle='rgba(0,255,209,.03)';ctx.lineWidth=1;
+    for(let x=0;x<c.width;x+=50){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,200);ctx.stroke()}
+    for(let y=0;y<200;y+=50){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(c.width,y);ctx.stroke()}
+    const cols=['#22C55E','#7B61FF','#F59E0B','#3B82F6','#7B61FF','#F59E0B','#22C55E','#EF4444'];
+    const W=c.width,H=200,bw=W/states.length;
+    states.forEach((s,i)=>{
+      const x=i*bw+4,y=60,w=bw-8,h=50;
+      ctx.fillStyle=i===cur?cols[i]+'33':'rgba(255,255,255,.04)';ctx.fillRect(x,y,w,h);
+      ctx.strokeStyle=i===cur?cols[i]:'rgba(255,255,255,.1)';ctx.lineWidth=i===cur?2:1;ctx.strokeRect(x,y,w,h);
+      ctx.fillStyle=i===cur?'#fff':cols[i]+'88';ctx.font=`${i===cur?'bold ':''}9px JetBrains Mono,monospace`;ctx.textAlign='center';ctx.fillText(s,x+w/2,y+h/2+4);
+      if(i<states.length-1){ctx.fillStyle='rgba(0,255,209,.4)';ctx.font='12px sans-serif';ctx.textAlign='center';ctx.fillText('→',x+w+4,y+h/2+5);}
+    });
+    // temp
+    ctx.fillStyle='#00FFD1';ctx.font='bold 18px Orbitron,monospace';ctx.textAlign='left';ctx.fillText(temp.toFixed(1)+'°C',12,28);
+    ctx.fillStyle='rgba(125,133,144,.6)';ctx.font='9px JetBrains Mono,monospace';ctx.fillText('LM35 SENSOR',12,44);
+    ctx.fillStyle='rgba(245,158,11,.8)';ctx.font='9px JetBrains Mono,monospace';ctx.textAlign='right';ctx.fillText('Setpoint: 8.0°C',W-12,28);
+    t++;if(t%80===0){cur=(cur+1)%states.length;}
+    if(cur===3)temp=Math.max(7.5,temp-0.3);else if(cur===0||cur===6)temp=Math.min(24,temp+0.1);
+    ctx.textAlign='left';requestAnimationFrame(draw);
+  }draw();
+})();
+
+// ── NEW PREVIEW: Machine Vision ──
+(function(){
+  const c=document.getElementById('vision-preview');if(!c)return;
+  c.width=c.offsetWidth||500;c.height=200;
+  const ctx=c.getContext('2d');
+  const objs=[{x:.1,y:.15,w:.15,h:.25,col:'#F1C40F'},{x:.32,y:.2,w:.12,h:.12,col:'#8B4513'},{x:.52,y:.1,w:.13,h:.22,col:'#EF4444'},{x:.7,y:.18,w:.11,h:.13,col:'#3B82F6'}];
+  let step=0,t=0,detected=false;
+  function draw(){
+    const W=c.width,H=200;
+    ctx.fillStyle='#0D1117';ctx.fillRect(0,0,W,H);
+    const steps=['Original','Grayscale','Threshold','Detected'];
+    const sw=W/4;
+    objs.forEach(o=>{
+      if(step===0){ctx.fillStyle=o.col;ctx.fillRect(o.x*sw,o.y*H,o.w*sw,o.h*H);}
+    });
+    if(step>=1){ctx.fillStyle='rgba(180,180,180,.9)';objs.forEach(o=>ctx.fillRect(sw+o.x*sw,o.y*H,o.w*sw,o.h*H));}
+    if(step>=2){ctx.fillStyle='#000';ctx.fillRect(2*sw,0,sw,H);objs.forEach(o=>{ctx.fillStyle='#fff';ctx.fillRect(2*sw+o.x*sw,o.y*H,o.w*sw,o.h*H);});}
+    if(step>=3){
+      objs.forEach(o=>{
+        ctx.fillStyle=o.col+'44';ctx.fillRect(3*sw+o.x*sw,o.y*H,o.w*sw,o.h*H);
+        ctx.strokeStyle='#00FF00';ctx.lineWidth=1.5;ctx.strokeRect(3*sw+o.x*sw-1,o.y*H-1,o.w*sw+2,o.h*H+2);
+        ctx.beginPath();ctx.arc(3*sw+(o.x+o.w/2)*sw,(o.y+o.h/2)*H,3,0,Math.PI*2);ctx.fillStyle='red';ctx.fill();
+      });
+    }
+    // dividers
+    [1,2,3].forEach(i=>{ctx.strokeStyle='rgba(0,255,209,.15)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(i*sw,0);ctx.lineTo(i*sw,H);ctx.stroke();});
+    steps.forEach((s,i)=>{ctx.fillStyle=i===step?'rgba(0,255,209,.9)':'rgba(125,133,144,.5)';ctx.font=`bold 9px JetBrains Mono,monospace`;ctx.textAlign='center';ctx.fillText(s,i*sw+sw/2,H-8);});
+    ctx.textAlign='left';
+    t++;if(t%60===0)step=(step+1)%4;
+    requestAnimationFrame(draw);
+  }draw();
+})();
+
+// ── NEW PREVIEW: Database ──
+(function(){
+  const c=document.getElementById('db-preview');if(!c)return;
+  c.width=c.offsetWidth||500;c.height=200;
+  const ctx=c.getContext('2d');
+  const tables=[{name:'STUDENT',x:.05,y:.1,c:'#00FFD1'},{name:'ENROLLMENT',x:.38,y:.55,c:'#EF4444'},{name:'COURSE',x:.65,y:.1,c:'#3B82F6'},{name:'INSTRUCTOR',x:.65,y:.6,c:'#7B61FF'}];
+  const links=[[0,1],[1,2],[2,3]];
+  let t=0,activeLink=0;
+  function draw(){
+    const W=c.width,H=200;
+    ctx.fillStyle='#0D1117';ctx.fillRect(0,0,W,H);
+    ctx.strokeStyle='rgba(245,158,11,.03)';ctx.lineWidth=1;
+    for(let x=0;x<W;x+=50){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}
+    links.forEach(([a,b],i)=>{
+      const ta=tables[a],tb=tables[b];
+      const ax=ta.x*W+40,ay=ta.y*H+18,bx=tb.x*W,by=tb.y*H+18;
+      ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.strokeStyle=i===activeLink?'rgba(0,255,209,.7)':'rgba(100,120,150,.2)';ctx.lineWidth=i===activeLink?2:1;ctx.stroke();
+    });
+    tables.forEach(t2=>{
+      const x=t2.x*W,y=t2.y*H,w=80,h=36;
+      ctx.fillStyle=t2.c+'22';ctx.strokeStyle=t2.c;ctx.lineWidth=1.5;ctx.fillRect(x,y,w,h);ctx.strokeRect(x,y,w,h);
+      ctx.fillStyle='#fff';ctx.font='bold 9px JetBrains Mono,monospace';ctx.textAlign='center';ctx.fillText(t2.name,x+w/2,y+h/2+4);
+    });
+    // SQL text
+    const sqls=['SELECT * FROM students;','JOIN enrollment ON StudentID','GROUP BY CourseName;','WHERE Grade = 'A''];
+    ctx.fillStyle='rgba(0,255,209,.8)';ctx.font='10px JetBrains Mono,monospace';ctx.textAlign='left';ctx.fillText('mysql> '+sqls[activeLink],12,H-15);
+    t++;if(t%70===0)activeLink=(activeLink+1)%links.length;
+    ctx.textAlign='left';requestAnimationFrame(draw);
+  }draw();
+})();
+
+// ── NEW PREVIEW: Machine Learning ──
+(function(){
+  const c=document.getElementById('ml-preview');if(!c)return;
+  c.width=c.offsetWidth||500;c.height=200;
+  const ctx=c.getContext('2d');
+  const kAccs=[.826,.826,.836,.836,.843,.843,.850,.843,.843,.836,.836,.830,.830,.830,.830,.830,.830,.824,.824,.824];
+  let t=0,animK=0;
+  function draw(){
+    const W=c.width,H=200;
+    ctx.fillStyle='#0D1117';ctx.fillRect(0,0,W,H);
+    ctx.strokeStyle='rgba(123,97,255,.04)';ctx.lineWidth=1;
+    for(let x=0;x<W;x+=50){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}
+    for(let y=0;y<H;y+=40){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}
+    // plot k vs accuracy
+    const plotX=60,plotW=W-80,plotY=20,plotH=130;
+    ctx.strokeStyle='rgba(255,255,255,.08)';ctx.lineWidth=1;
+    ctx.strokeRect(plotX,plotY,plotW,plotH);
+    // line
+    ctx.beginPath();
+    kAccs.slice(0,animK+1).forEach((v,i)=>{
+      const x=plotX+i*(plotW/19),y=plotY+plotH-(v-.78)/(0.09)*plotH;
+      i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+    });
+    ctx.strokeStyle='#00FFD1';ctx.lineWidth=2;ctx.stroke();
+    // best point
+    if(animK>=6){const bx=plotX+6*(plotW/19),by=plotY+plotH-(.85-.78)/(0.09)*plotH;ctx.beginPath();ctx.arc(bx,by,6,0,Math.PI*2);ctx.fillStyle='#FF0080';ctx.fill();ctx.fillStyle='#fff';ctx.font='bold 9px JetBrains Mono,monospace';ctx.textAlign='center';ctx.fillText('K=7 (85%)',bx,by-10);}
+    ctx.fillStyle='#7B61FF';ctx.font='bold 14px Orbitron,monospace';ctx.textAlign='left';ctx.fillText('KNN K-OPT',12,22);
+    ctx.fillStyle='rgba(125,133,144,.6)';ctx.font='9px JetBrains Mono,monospace';ctx.fillText('accuracy vs k value',12,38);
+    ctx.fillStyle='rgba(0,255,209,.8)';ctx.fillText(`K=${animK+1}  acc=${(kAccs[Math.min(animK,19)]*100).toFixed(1)}%`,12,H-12);
+    t++;if(t%8===0&&animK<19)animK++;else if(animK>=19)animK=0;
+    ctx.textAlign='left';requestAnimationFrame(draw);
+  }draw();
+})();
+
 </script>
 </body>
 </html>
