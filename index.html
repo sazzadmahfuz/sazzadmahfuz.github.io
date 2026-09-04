@@ -162,7 +162,7 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
 <!-- HERO -->
 <section id="hero">
   <div>
-    <div class="hero-tag">// Robotics &amp; ICT Engineer</div>
+    <div class="hero-tag">// Robotics &amp; ICT Engineering</div>
     <h1 class="hero-name">Sazzad Ibna<br>Mahfuz</h1>
     <p class="hero-title"><span id="typed"></span><span class="cursor"></span></p>
     <div class="hero-badges">
@@ -173,6 +173,8 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
     </div>
     <div class="hero-ctas">
       <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="https://sazzadmahfuz.github.io/Resume.pdf" target="_blank" class="btn-outline">View CV ↗</a>
+      <a href="https://sazzadmahfuz.github.io/Resume.pdf" download="Sazzad_Ibna_Mahfuz_CV.pdf" class="btn-outline">Download CV ↓</a>
       <a href="https://github.com/sazzadmahfuz" target="_blank" class="btn-outline">GitHub ↗</a>
       <a href="https://www.linkedin.com/in/sazzad-mahfuz" target="_blank" class="btn-outline">LinkedIn ↗</a>
     </div>
@@ -187,7 +189,7 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
 <div id="stats">
   <div class="stats-inner">
     <div><span class="stat-num" data-target="3">0</span><div class="stat-label">UR Certifications</div></div>
-    <div><span class="stat-num">2028</span><div class="stat-label">Expected Graduation</div></div>
+    <div><span class="stat-num" data-target="5">0</span><div class="stat-label">Engineering Domains</div></div>
     <div><span class="stat-num" data-target="10">0</span><div class="stat-label">Months Robotic Welding</div></div>
     <div><span class="stat-num" data-target="6">0</span><div class="stat-label">Professional Credentials</div></div>
   </div>
@@ -222,18 +224,39 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
 <section id="projects" style="max-width:1100px">
   <div class="section-header reveal">
     <div class="section-eyebrow">02 &mdash; Projects</div>
-    <h2 class="section-title">Featured Work</h2>
+    <h2 class="section-title">Projects</h2>
   </div>
 
   <!-- FEATURED ENGINEERING -->
   <div class="proj-cat-label reveal">Featured Engineering Projects</div>
   <div class="projects-grid">
 
+    <!-- Product Quality Inspection Line — CURRENT 15cr PROJECT -->
+    <div class="project-card reveal">
+      <div class="project-preview">
+        <canvas id="inspection-preview"></canvas>
+      </div>
+      <div class="project-body">
+        <div class="project-tag">Machine Vision · Robotics · Python · In Progress · <span style="opacity:.6">2026</span></div>
+        <h3 class="project-title">Product Quality Inspection Line</h3>
+        <p class="project-desc">15-credit capstone project under the Intelligent Robotics module at HAMK. Developing an automated inspection system integrating a conveyor belt, USB webcam, and robot arm — using OpenCV computer vision to detect and classify product defects in real time, then coordinate a robot pick-and-place response. Active development.</p>
+        <div class="project-stack">
+          <span class="tech-pill">Python</span><span class="tech-pill">OpenCV</span><span class="tech-pill">Robotics</span><span class="tech-pill">Conveyor</span><span class="tech-pill">Machine Vision</span><span class="tech-pill">15 cr</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/sazzadmahfuz" target="_blank" class="project-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub (In Progress)
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!-- PLC Control Systems -->
     <div class="project-card reveal">
       <div class="project-preview"><canvas id="ctrl-preview"></canvas></div>
       <div class="project-body">
-        <div class="project-tag">PLC · Beckhoff · TwinCAT · HAMK</div>
+        <div class="project-tag">PLC · Beckhoff · TwinCAT · HAMK · <span style="opacity:.6">2025–2026</span></div>
         <h3 class="project-title">PLC Control Systems</h3>
         <p class="project-desc">Designed and implemented a PLC-controlled automation workflow with Beckhoff EtherCAT I/O and a Dobot MG400. Wrote Structured Text state-machine logic for pick-and-place sequencing, LM35 temperature supervision, and fault handling. Physically wired and commissioned an EL1008/EL2008/EL3074 terminal stack.</p>
         <div class="project-stack"><span class="tech-pill">TwinCAT 3</span><span class="tech-pill">Structured Text</span><span class="tech-pill">EtherCAT</span><span class="tech-pill">IEC 61131-3</span></div>
@@ -248,7 +271,7 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
     <div class="project-card reveal">
       <div class="project-preview"><canvas id="vision-preview"></canvas></div>
       <div class="project-body">
-        <div class="project-tag">Python · OpenCV · RoboDK · HAMK</div>
+        <div class="project-tag">Python · OpenCV · RoboDK · HAMK · <span style="opacity:.6">2026</span></div>
         <h3 class="project-title">Machine Vision Pipeline</h3>
         <p class="project-desc">End-to-end vision pipeline for robotic pick-and-place: CLAHE contrast enhancement, Otsu thresholding, morphological cleaning, and connectedComponentsWithStats for centroid extraction. Calibrated camera-to-robot homography (8 calibration points, mean error &lt;1 mm) enabling direct pixel-to-TCP coordinate transfer.</p>
         <div class="project-stack"><span class="tech-pill">Python</span><span class="tech-pill">OpenCV</span><span class="tech-pill">RoboDK</span><span class="tech-pill">Homography</span></div>
@@ -284,7 +307,7 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
     <div class="project-card reveal">
       <div class="project-preview"><canvas id="ml-preview"></canvas></div>
       <div class="project-body">
-        <div class="project-tag">Machine Learning · Course Project · HAMK</div>
+        <div class="project-tag">Machine Learning · Course Project · HAMK · <span style="opacity:.6">2026</span></div>
         <h3 class="project-title">Employee Attrition Prediction</h3>
         <p class="project-desc">Compared KNN and Gaussian Naive Bayes on the IBM HR Analytics dataset (1,470 records). K-optimisation loop (k=1–20) identified k=7 as optimal with 85% accuracy. Naive Bayes achieved 60% minority-class recall vs KNN's 32% — demonstrating how model choice depends on the business cost of false negatives.</p>
         <div class="project-stack"><span class="tech-pill">Python</span><span class="tech-pill">Scikit-learn</span><span class="tech-pill">KNN</span><span class="tech-pill">Naive Bayes</span><span class="tech-pill">Pandas</span></div>
@@ -300,7 +323,7 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
     <div class="project-card reveal">
       <div class="project-preview"><canvas id="db-preview"></canvas></div>
       <div class="project-body">
-        <div class="project-tag">MySQL · ER Modelling · HAMK Database Design</div>
+        <div class="project-tag">MySQL · ER Modelling · HAMK Database Design · <span style="opacity:.6">2025</span></div>
         <h3 class="project-title">Student Course Registration DB</h3>
         <p class="project-desc">Course project: 7-entity relational database modelled in Crow's Foot ER notation and normalised to 3NF. Full DDL/DML in MySQL 8.0 including JOINs, GROUP BY, subqueries, and an interactive SQL console demo. Includes normalisation proof (1NF→3NF) and student transcript queries. Team 7.</p>
         <div class="project-stack"><span class="tech-pill">MySQL 8.0</span><span class="tech-pill">SQL</span><span class="tech-pill">ER Modelling</span><span class="tech-pill">3NF</span></div>
@@ -315,7 +338,7 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
     <div class="project-card reveal">
       <div class="project-preview"><canvas id="iot-preview"></canvas></div>
       <div class="project-body">
-        <div class="project-tag">IoT · Course Project · HAMK</div>
+        <div class="project-tag">IoT · Course Project · HAMK · <span style="opacity:.6">2025</span></div>
         <h3 class="project-title">IoT Smart Environment Monitor</h3>
         <p class="project-desc">Real-time IoT dashboard prototype tracking temperature, humidity, CO₂, and light intensity with live chart updates, threshold-triggered WARN/ALERT states, and a rolling 60-sample history. Built for the IoT Architectures course at HAMK; architecture compatible with physical sensors via MQTT/Node-RED.</p>
         <div class="project-stack"><span class="tech-pill">HTML5</span><span class="tech-pill">JavaScript</span><span class="tech-pill">Chart.js</span><span class="tech-pill">IoT</span><span class="tech-pill">MQTT</span></div>
@@ -330,7 +353,7 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
     <div class="project-card reveal">
       <div class="project-preview"><canvas id="rpa-preview"></canvas></div>
       <div class="project-body">
-        <div class="project-tag">Automation · Robocorp · HAMK</div>
+        <div class="project-tag">Automation · Robocorp · HAMK · <span style="opacity:.6">2024</span></div>
         <h3 class="project-title">RPA Process Automation Dashboard</h3>
         <p class="project-desc">Robocorp-style monitoring prototype tracking 6 automation bots — success rate, exceptions, hourly throughput, and time saved — with a live event log and per-workflow status table. Reflects rpaframework task architecture (@task decorator, robot.yaml). Robocorp Python certified (ID: d38fbb43).</p>
         <div class="project-stack"><span class="tech-pill">Python</span><span class="tech-pill">Robocorp</span><span class="tech-pill">RPA</span><span class="tech-pill">Chart.js</span></div>
@@ -345,7 +368,7 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
     <div class="project-card reveal">
       <div class="project-preview"><canvas id="net-preview"></canvas></div>
       <div class="project-body">
-        <div class="project-tag">Networking · Cisco CCNA · HAMK</div>
+        <div class="project-tag">Networking · Cisco CCNA · HAMK · <span style="opacity:.6">2025</span></div>
         <h3 class="project-title">CCNA Network Topology Analyzer</h3>
         <p class="project-desc">Interactive network topology builder. Drag-and-drop routers, switches, and hosts; assign link costs. Dijkstra's shortest-path (the basis of OSPF) highlights optimal routes. Includes per-node routing tables, ICMP ping simulation, and RFC 1918 IPv4 addressing — CCNA exam concepts applied directly.</p>
         <div class="project-stack"><span class="tech-pill">JavaScript</span><span class="tech-pill">Dijkstra</span><span class="tech-pill">CCNA</span><span class="tech-pill">Canvas API</span></div>
@@ -409,6 +432,10 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
   <div class="contact-card reveal">
     <p>Open to robotics engineering internships, automation roles, and collaborative projects — especially in Finland and the Nordic region. Feel free to reach out.</p>
     <div class="contact-links">
+      <a href="tel:+358417403018" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.79 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.06 6.06l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+        +358 417403018
+      </a>
       <a href="mailto:sazzadibnamahfuz@gmail.com" class="contact-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         sazzadibnamahfuz@gmail.com
@@ -427,7 +454,7 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
 
 <footer>
   <div>Built by Sazzad Ibna Mahfuz · Helsinki, Finland · 2026</div>
-  <div style="margin-top:.5rem;color:rgba(125,133,144,.5)">// ICT &amp; Robotics Engineering · HAMK Häme University of Applied Sciences</div>
+  <div style="margin-top:.5rem;color:rgba(125,133,144,.5)">// ICT &amp; Robotics Engineering · HAMK University of Applied Sciences</div>
 </footer>
 
 <script>
@@ -704,6 +731,74 @@ counters.forEach(c=>cio.observe(c));
     tables.forEach(tb=>{const x=tb.x*W,y=tb.y*H,w=82,h=36;ctx.fillStyle=tb.col+'18';ctx.strokeStyle=tb.col+'55';ctx.lineWidth=1.2;ctx.fillRect(x,y,w,h);ctx.strokeRect(x,y,w,h);ctx.fillStyle='#E6EDF3';ctx.font='bold 8px JetBrains Mono,monospace';ctx.textAlign='center';ctx.fillText(tb.n,x+w/2,y+h/2+3);});
     ctx.fillStyle='rgba(0,255,209,.7)';ctx.font='9px JetBrains Mono,monospace';ctx.textAlign='left';ctx.fillText('mysql> '+sqls[al],10,H-10);
     t++;if(t%78===0)al=(al+1)%links.length;ctx.textAlign='left';requestAnimationFrame(draw);
+  }draw();
+})();
+
+
+// Product Quality Inspection Line preview
+(function(){
+  const c=document.getElementById('inspection-preview');if(!c)return;
+  c.width=c.offsetWidth||500;c.height=200;
+  const ctx=c.getContext('2d');
+  const items=[
+    {x:420,color:'#22C55E',label:'OK',detected:false,cx:0,cy:0},
+    {x:290,color:'#EF4444',label:'DEFECT',detected:false,cx:0,cy:0},
+    {x:160,color:'#22C55E',label:'OK',detected:false,cx:0,cy:0},
+  ];
+  let t=0,scanX=0;
+  function draw(){
+    const W=c.width,H=200;
+    ctx.fillStyle='#0D1117';ctx.fillRect(0,0,W,H);
+    // grid
+    for(let x=0;x<W;x+=40)for(let y=0;y<H;y+=40){ctx.beginPath();ctx.arc(x,y,.8,0,Math.PI*2);ctx.fillStyle='rgba(0,255,209,.05)';ctx.fill();}
+    // conveyor belt
+    const beltY=130,beltH=28;
+    ctx.fillStyle='#1a1f2e';ctx.fillRect(0,beltY,W,beltH);
+    ctx.strokeStyle='rgba(0,255,209,.2)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(0,beltY);ctx.lineTo(W,beltY);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(0,beltY+beltH);ctx.lineTo(W,beltY+beltH);ctx.stroke();
+    // belt rollers
+    for(let rx=0;rx<W;rx+=40){
+      ctx.beginPath();ctx.arc(rx,beltY+beltH/2,6,0,Math.PI*2);
+      ctx.fillStyle='#1e2842';ctx.fill();ctx.strokeStyle='rgba(0,255,209,.15)';ctx.lineWidth=1;ctx.stroke();
+    }
+    // belt dashes moving
+    ctx.setLineDash([12,18]);ctx.strokeStyle='rgba(0,255,209,.1)';ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(0,beltY+beltH/2);ctx.lineTo(W,beltY+beltH/2);ctx.stroke();
+    ctx.setLineDash([]);
+    // move items left
+    items.forEach(item=>{
+      item.x-=.6;if(item.x<-30)item.x=W+30;
+      const ix=item.x,iy=beltY-14;
+      // box
+      ctx.fillStyle=item.color+'22';ctx.fillRect(ix-14,iy-14,28,28);
+      ctx.strokeStyle=item.color+'88';ctx.lineWidth=1.5;ctx.strokeRect(ix-14,iy-14,28,28);
+      item.cx=ix;item.cy=iy;
+      // detection overlay when camera scans it
+      const dist=Math.abs(ix-scanX);
+      if(dist<40){
+        ctx.strokeStyle=item.color;ctx.lineWidth=1.5;ctx.strokeRect(ix-18,iy-18,36,36);
+        ctx.fillStyle=item.color;ctx.font='bold 8px JetBrains Mono,monospace';
+        ctx.textAlign='center';ctx.fillText(item.label,ix,iy-22);
+        // corner ticks
+        const s=18;[[ix-s,iy-s,1,1],[ix+s,iy-s,-1,1],[ix-s,iy+s,1,-1],[ix+s,iy+s,-1,-1]].forEach(([x,y,dx,dy])=>{
+          ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+dx*7,y);ctx.moveTo(x,y);ctx.lineTo(x,y+dy*7);
+          ctx.strokeStyle=item.color;ctx.lineWidth=2;ctx.stroke();
+        });
+      }
+    });
+    // camera / scanner line
+    scanX=(scanX+1.2)%W;
+    ctx.strokeStyle='rgba(0,255,209,.35)';ctx.lineWidth=1;ctx.setLineDash([3,3]);
+    ctx.beginPath();ctx.moveTo(scanX,20);ctx.lineTo(scanX,beltY+beltH);ctx.stroke();ctx.setLineDash([]);
+    // webcam icon
+    ctx.fillStyle='rgba(0,255,209,.7)';ctx.font='bold 12px Orbitron,monospace';ctx.textAlign='left';ctx.fillText('INSPECTION LINE',14,22);
+    ctx.fillStyle='rgba(125,133,144,.6)';ctx.font='9px JetBrains Mono,monospace';ctx.fillText('webcam · conveyor · robot · 15 cr',14,38);
+    // status
+    const anyDefect=items.some(i=>Math.abs(i.cx-scanX)<40&&i.label==='DEFECT');
+    ctx.fillStyle=anyDefect?'#EF4444':'#22C55E';ctx.textAlign='right';
+    ctx.font='bold 9px JetBrains Mono,monospace';ctx.fillText(anyDefect?'⚠ DEFECT DETECTED':'✓ PASS',W-12,22);
+    t++;requestAnimationFrame(draw);
   }draw();
 })();
 
