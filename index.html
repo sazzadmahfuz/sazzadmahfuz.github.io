@@ -125,6 +125,20 @@ section{position:relative;z-index:1;padding:5rem 2rem;max-width:1100px;margin:0 
 /* ── FOOTER ── */
 footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--muted);position:relative;z-index:1}
 
+
+/* ── FOCUS GRID (replaces skill bars) ── */
+.focus-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+@media(max-width:480px){.focus-grid{grid-template-columns:1fr}}
+.focus-item{background:var(--bg3);border:0.5px solid var(--border);border-radius:8px;padding:.75rem 1rem;transition:border-color .2s}
+.focus-item:hover{border-color:var(--cyan)}
+.focus-area{font-size:.65rem;font-family:'JetBrains Mono',monospace;color:var(--cyan);letter-spacing:.1em;margin-bottom:.4rem;opacity:.85}
+.focus-tags{display:flex;flex-wrap:wrap;gap:.3rem}
+.ftag{font-size:.7rem;color:var(--muted);padding:.12rem .48rem;border-radius:4px;background:rgba(255,255,255,.04)}
+
+/* ── PROJECT CATEGORY LABEL ── */
+.proj-cat-label{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--muted);letter-spacing:.14em;margin:2.5rem 0 1rem;display:flex;align-items:center;gap:.75rem}
+.proj-cat-label::after{content:'';flex:1;height:0.5px;background:var(--border)}
+
 /* ── ANIMATIONS ── */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
@@ -135,7 +149,7 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
 <canvas id="bg-canvas"></canvas>
 
 <nav>
-  <div class="nav-logo">SIM.exe</div>
+  <div class="nav-logo">portfolio.exe</div>
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
@@ -172,9 +186,10 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
 <!-- STATS -->
 <div id="stats">
   <div class="stats-inner">
-    <div><span class="stat-num" data-target="3">0</span><div class="stat-label">UR certifications</div></div>
-    <div><span class="stat-num" data-target="8">0</span><div class="stat-label">tech stacks</div></div>
-    <div><span class="stat-num" data-target="2">0</span><div class="stat-label">years industry exp.</div></div>
+    <div><span class="stat-num" data-target="3">0</span><div class="stat-label">UR Certifications</div></div>
+    <div><span class="stat-num">2028</span><div class="stat-label">Expected Graduation</div></div>
+    <div><span class="stat-num" data-target="10">0</span><div class="stat-label">Months Robotic Welding</div></div>
+    <div><span class="stat-num" data-target="6">0</span><div class="stat-label">Professional Credentials</div></div>
   </div>
 </div>
 
@@ -186,20 +201,18 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
   </div>
   <div class="about-grid">
     <div class="about-text reveal">
-      <p>I'm a <strong>BEng student in ICT & Robotics</strong> at Häme University of Applied Sciences (HAMK), Finland. I specialise in the intersection of physical robotics, software automation, and networked systems.</p>
-      <p>Currently working as a <strong>Robotic Welder at K. Hartwall Oy</strong>, operating and monitoring industrial welding robots full-time alongside my studies. I hold all three <strong>Universal Robots e-Series certifications</strong> and a <strong>Cisco CCNA</strong> certificate.</p>
+      <p>I'm a <strong>BEng student in ICT &amp; Robotics</strong> at Häme University of Applied Sciences (HAMK), Finland, with 156 of 240 credits completed — on track to graduate in 2028.</p>
+      <p>Currently working as a <strong>Robotic Welder at K. Hartwall Oy</strong>, operating and monitoring Yaskawa industrial welding systems (two stints: Apr–Sep 2025 and May 2026–present). I hold all three <strong>Universal Robots e-Series certifications</strong> and a <strong>Cisco CCNA</strong> certificate.</p>
       <p>My background spans RPA with Python/Robocorp, collaborative robotics, IoT architectures, machine vision, Linux systems administration, and OOP — all backed by hands-on coursework and real industry exposure.</p>
     </div>
     <div class="reveal">
-      <div class="skills-grid">
-        <div class="skill-row"><span class="skill-name">Robotics (UR)</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:.90"></div></div><span class="skill-pct">90%</span></div>
-        <div class="skill-row"><span class="skill-name">Python / RPA</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:.78"></div></div><span class="skill-pct">78%</span></div>
-        <div class="skill-row"><span class="skill-name">IoT Systems</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:.82"></div></div><span class="skill-pct">82%</span></div>
-        <div class="skill-row"><span class="skill-name">Linux / Networking</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:.75"></div></div><span class="skill-pct">75%</span></div>
-        <div class="skill-row"><span class="skill-name">Machine Vision</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:.65"></div></div><span class="skill-pct">65%</span></div>
-        <div class="skill-row"><span class="skill-name">OOP / Java</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:.72"></div></div><span class="skill-pct">72%</span></div>
-        <div class="skill-row"><span class="skill-name">Machine Learning</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:.60"></div></div><span class="skill-pct">60%</span></div>
-        <div class="skill-row"><span class="skill-name">MIG Welding</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:.88"></div></div><span class="skill-pct">88%</span></div>
+      <div class="focus-grid">
+        <div class="focus-item"><div class="focus-area">Industrial Robotics</div><div class="focus-tags"><span class="ftag">Universal Robots</span><span class="ftag">Yaskawa</span><span class="ftag">RoboDK</span><span class="ftag">Dobot MG400</span></div></div>
+        <div class="focus-item"><div class="focus-area">PLC &amp; Control Systems</div><div class="focus-tags"><span class="ftag">TwinCAT 3</span><span class="ftag">Beckhoff EtherCAT</span><span class="ftag">Structured Text</span></div></div>
+        <div class="focus-item"><div class="focus-area">Machine Vision</div><div class="focus-tags"><span class="ftag">OpenCV</span><span class="ftag">Python</span><span class="ftag">Segmentation</span><span class="ftag">Homography</span></div></div>
+        <div class="focus-item"><div class="focus-area">Programming</div><div class="focus-tags"><span class="ftag">Python</span><span class="ftag">JavaScript</span><span class="ftag">SQL</span><span class="ftag">Java</span></div></div>
+        <div class="focus-item"><div class="focus-area">Networking &amp; IoT</div><div class="focus-tags"><span class="ftag">Cisco CCNA</span><span class="ftag">MQTT</span><span class="ftag">IoT Architectures</span></div></div>
+        <div class="focus-item"><div class="focus-area">Automation &amp; ML</div><div class="focus-tags"><span class="ftag">Robocorp RPA</span><span class="ftag">Scikit-learn</span><span class="ftag">Pandas</span></div></div>
       </div>
     </div>
   </div>
@@ -211,208 +224,139 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
     <div class="section-eyebrow">02 &mdash; Projects</div>
     <h2 class="section-title">Featured Work</h2>
   </div>
+
+  <!-- FEATURED ENGINEERING -->
+  <div class="proj-cat-label reveal">Featured Engineering Projects</div>
   <div class="projects-grid">
-    <!-- NEW P1: Control Systems -->
+
+    <!-- PLC Control Systems -->
     <div class="project-card reveal">
-      <div class="project-preview">
-        <canvas id="ctrl-preview"></canvas>
-      </div>
+      <div class="project-preview"><canvas id="ctrl-preview"></canvas></div>
       <div class="project-body">
-        <div class="project-tag">PLC · Beckhoff · TwinCAT</div>
+        <div class="project-tag">PLC · Beckhoff · TwinCAT · HAMK</div>
         <h3 class="project-title">PLC Control Systems</h3>
-        <p class="project-desc">Beckhoff EtherCAT PLC control system with state-machine-driven robot arm pick-and-place, LM35 temperature supervision, refrigerator control, and live TwinCAT VISU. Built for Control Systems course at HAMK.</p>
-        <div class="project-stack">
-          <span class="tech-pill">TwinCAT 3</span><span class="tech-pill">Structured Text</span><span class="tech-pill">EtherCAT</span><span class="tech-pill">Beckhoff</span><span class="tech-pill">IEC 61131-3</span>
-        </div>
+        <p class="project-desc">Designed and implemented a PLC-controlled automation workflow with Beckhoff EtherCAT I/O and a Dobot MG400. Wrote Structured Text state-machine logic for pick-and-place sequencing, LM35 temperature supervision, and fault handling. Physically wired and commissioned an EL1008/EL2008/EL3074 terminal stack.</p>
+        <div class="project-stack"><span class="tech-pill">TwinCAT 3</span><span class="tech-pill">Structured Text</span><span class="tech-pill">EtherCAT</span><span class="tech-pill">IEC 61131-3</span></div>
         <div class="project-links">
-          <a href="https://sazzadmahfuz.github.io/control-systems-plc" class="project-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Live Demo
-          </a>
-          <a href="https://github.com/sazzadmahfuz/control-systems-plc" target="_blank" class="project-link">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            Source
-          </a>
+          <a href="projects/control-systems/index.html" class="project-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Live Demo</a>
+          <a href="https://github.com/sazzadmahfuz/control-systems-plc" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>Source</a>
         </div>
       </div>
     </div>
 
-    <!-- NEW P2: Machine Vision -->
+    <!-- Machine Vision -->
     <div class="project-card reveal">
-      <div class="project-preview">
-        <canvas id="vision-preview"></canvas>
-      </div>
+      <div class="project-preview"><canvas id="vision-preview"></canvas></div>
       <div class="project-body">
-        <div class="project-tag">Computer Vision · Python · OpenCV</div>
+        <div class="project-tag">Python · OpenCV · RoboDK · HAMK</div>
         <h3 class="project-title">Machine Vision Pipeline</h3>
-        <p class="project-desc">End-to-end computer vision pipeline: RGB channel separation, Otsu segmentation with CLAHE, connected-component detection, and camera–robot homography mapping for Dobot MG400 pick-and-place. Python + OpenCV + RoboDK.</p>
-        <div class="project-stack">
-          <span class="tech-pill">Python</span><span class="tech-pill">OpenCV</span><span class="tech-pill">RoboDK</span><span class="tech-pill">Homography</span><span class="tech-pill">Segmentation</span>
-        </div>
+        <p class="project-desc">End-to-end vision pipeline for robotic pick-and-place: CLAHE contrast enhancement, Otsu thresholding, morphological cleaning, and connectedComponentsWithStats for centroid extraction. Calibrated camera-to-robot homography (8 calibration points, mean error &lt;1 mm) enabling direct pixel-to-TCP coordinate transfer.</p>
+        <div class="project-stack"><span class="tech-pill">Python</span><span class="tech-pill">OpenCV</span><span class="tech-pill">RoboDK</span><span class="tech-pill">Homography</span></div>
         <div class="project-links">
-          <a href="https://sazzadmahfuz.github.io/machine-vision-opencv/" class="project-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Live Demo
-          </a>
-          <a href="https://github.com/sazzadmahfuz/machine-vision-opencv" target="_blank" class="project-link">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            Source
-          </a>
+          <a href="projects/machine-vision/index.html" class="project-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Live Demo</a>
+          <a href="https://github.com/sazzadmahfuz/Machine-Vision" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>Source</a>
         </div>
       </div>
     </div>
 
-    <!-- NEW P3: Database Design -->
+    <!-- Robot Kinematics -->
     <div class="project-card reveal">
-      <div class="project-preview">
-        <canvas id="db-preview"></canvas>
-      </div>
+      <div class="project-preview"><canvas id="robot-preview"></canvas></div>
       <div class="project-body">
-        <div class="project-tag">Database · MySQL · ER Modelling</div>
-        <h3 class="project-title">Student Course Registration DB</h3>
-        <p class="project-desc">Full relational database for a university registration system: ER diagram (7 entities, Crow's Foot), normalised to 3NF, MySQL DDL/DML with JOINs, GROUP BY, subqueries, and an interactive SQL console. Team 7 project.</p>
-        <div class="project-stack">
-          <span class="tech-pill">MySQL 8.0</span><span class="tech-pill">SQL</span><span class="tech-pill">ER Modelling</span><span class="tech-pill">3NF</span><span class="tech-pill">JavaScript</span>
-        </div>
-        <div class="project-links">
-          <a href="https://sazzadmahfuz.github.io/database-design-system/" class="project-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Live Demo
-          </a>
-          <a href="https://github.com/sazzadmahfuz/database-design-system" target="_blank" class="project-link">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            Source
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- NEW P4: Machine Learning -->
-    <div class="project-card reveal">
-      <div class="project-preview">
-        <canvas id="ml-preview"></canvas>
-      </div>
-      <div class="project-body">
-        <div class="project-tag">Machine Learning · Scikit-learn · Python</div>
-        <h3 class="project-title">Employee Attrition Prediction</h3>
-        <p class="project-desc">KNN vs Gaussian Naive Bayes on IBM HR Analytics dataset (1470 employees). Feature engineering, StandardScaler, K-optimisation loop, confusion matrices, and model comparison. Best accuracy 85% with KNN k=7.</p>
-        <div class="project-stack">
-          <span class="tech-pill">Python</span><span class="tech-pill">Scikit-learn</span><span class="tech-pill">KNN</span><span class="tech-pill">Naive Bayes</span><span class="tech-pill">Pandas</span>
-        </div>
-        <div class="project-links">
-          <a href="https://sazzadmahfuz.github.io/ml-employee-attrition-dashboard/" class="project-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Live Demo
-          </a>
-          <a href="https://github.com/sazzadmahfuz/ml-employee-attrition-dashboard" target="_blank" class="project-link">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            Source
-          </a>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- P1: IoT Monitor -->
-    <div class="project-card reveal">
-      <div class="project-preview">
-        <canvas id="iot-preview"></canvas>
-      </div>
-      <div class="project-body">
-        <div class="project-tag">IoT · Course Project</div>
-        <h3 class="project-title">Smart Environment Monitor</h3>
-        <p class="project-desc">Real-time IoT dashboard tracking temperature, humidity, CO₂, and light intensity with live chart updates, threshold alerts, and data logging. Built for the IoT Architectures course at HAMK.</p>
-        <div class="project-stack">
-          <span class="tech-pill">HTML5</span><span class="tech-pill">JavaScript</span><span class="tech-pill">Chart.js</span><span class="tech-pill">IoT</span><span class="tech-pill">MQTT</span>
-        </div>
-        <div class="project-links">
-          <a href="https://sazzadmahfuz.github.io/iot-smart-monitor/" class="project-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Live Demo
-          </a>
-          <a href="https://github.com/sazzadmahfuz/iot-smart-monitor" target="_blank" class="project-link">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            Source
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- P2: Robot Kinematics -->
-    <div class="project-card reveal">
-      <div class="project-preview">
-        <canvas id="robot-preview"></canvas>
-      </div>
-      <div class="project-body">
-        <div class="project-tag">Robotics · Course Project</div>
+        <div class="project-tag">Robotics · HAMK Robot Kinematics</div>
         <h3 class="project-title">Robot Arm Kinematics Visualizer</h3>
-        <p class="project-desc">Interactive 3-DOF planar robot arm simulator with forward and inverse kinematics. Control each joint in real time or click a target point and watch the arm solve its path. Built for Robot Kinematics course.</p>
-        <div class="project-stack">
-          <span class="tech-pill">JavaScript</span><span class="tech-pill">Canvas API</span><span class="tech-pill">Kinematics</span><span class="tech-pill">Math.js</span>
-        </div>
+        <p class="project-desc">Interactive 3-DOF planar robot arm simulator with forward and inverse kinematics. Control each joint in real time or click a target point for IK solving. Implements the Denavit–Hartenberg model and geometric wrist decoupling. Adjustable link lengths and continuous auto-animation mode.</p>
+        <div class="project-stack"><span class="tech-pill">JavaScript</span><span class="tech-pill">Canvas API</span><span class="tech-pill">FK / IK</span><span class="tech-pill">D-H Parameters</span></div>
         <div class="project-links">
-          <a href="https://sazzadmahfuz.github.io/robot-kinematics-viz/" class="project-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Live Demo
-          </a>
-          <a href="https://github.com/sazzadmahfuz/robot-kinematics-viz" target="_blank" class="project-link">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            Source
-          </a>
+          <a href="projects/robot-kinematics/index.html" class="project-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Live Demo</a>
+          <a href="https://github.com/sazzadmahfuz/robot-kinematics-viz" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>Source</a>
         </div>
       </div>
     </div>
 
-    <!-- P3: RPA Dashboard -->
+    </div><!-- /featured grid -->
+
+  <!-- COURSE & SOFTWARE -->
+  <div class="proj-cat-label reveal">Course &amp; Software Projects</div>
+  <div class="projects-grid">
+
+    <!-- Employee Attrition — FEATURED -->
     <div class="project-card reveal">
-      <div class="project-preview">
-        <canvas id="rpa-preview"></canvas>
-      </div>
+      <div class="project-preview"><canvas id="ml-preview"></canvas></div>
       <div class="project-body">
-        <div class="project-tag">Automation · Course Project</div>
+        <div class="project-tag">Machine Learning · Course Project · HAMK</div>
+        <h3 class="project-title">Employee Attrition Prediction</h3>
+        <p class="project-desc">Compared KNN and Gaussian Naive Bayes on the IBM HR Analytics dataset (1,470 records). K-optimisation loop (k=1–20) identified k=7 as optimal with 85% accuracy. Naive Bayes achieved 60% minority-class recall vs KNN's 32% — demonstrating how model choice depends on the business cost of false negatives.</p>
+        <div class="project-stack"><span class="tech-pill">Python</span><span class="tech-pill">Scikit-learn</span><span class="tech-pill">KNN</span><span class="tech-pill">Naive Bayes</span><span class="tech-pill">Pandas</span></div>
+        <div class="project-links">
+          <a href="projects/machine-learning/index.html" class="project-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Live Demo</a>
+          <a href="https://github.com/sazzadmahfuz/ml-employee-attrition" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>Source</a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Database Design -->
+    <div class="project-card reveal">
+      <div class="project-preview"><canvas id="db-preview"></canvas></div>
+      <div class="project-body">
+        <div class="project-tag">MySQL · ER Modelling · HAMK Database Design</div>
+        <h3 class="project-title">Student Course Registration DB</h3>
+        <p class="project-desc">Course project: 7-entity relational database modelled in Crow's Foot ER notation and normalised to 3NF. Full DDL/DML in MySQL 8.0 including JOINs, GROUP BY, subqueries, and an interactive SQL console demo. Includes normalisation proof (1NF→3NF) and student transcript queries. Team 7.</p>
+        <div class="project-stack"><span class="tech-pill">MySQL 8.0</span><span class="tech-pill">SQL</span><span class="tech-pill">ER Modelling</span><span class="tech-pill">3NF</span></div>
+        <div class="project-links">
+          <a href="projects/database-design/index.html" class="project-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Live Demo</a>
+          <a href="https://github.com/sazzadmahfuz/database-design-project" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>Source</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- IoT Monitor -->
+    <div class="project-card reveal">
+      <div class="project-preview"><canvas id="iot-preview"></canvas></div>
+      <div class="project-body">
+        <div class="project-tag">IoT · Course Project · HAMK</div>
+        <h3 class="project-title">IoT Smart Environment Monitor</h3>
+        <p class="project-desc">Real-time IoT dashboard prototype tracking temperature, humidity, CO₂, and light intensity with live chart updates, threshold-triggered WARN/ALERT states, and a rolling 60-sample history. Built for the IoT Architectures course at HAMK; architecture compatible with physical sensors via MQTT/Node-RED.</p>
+        <div class="project-stack"><span class="tech-pill">HTML5</span><span class="tech-pill">JavaScript</span><span class="tech-pill">Chart.js</span><span class="tech-pill">IoT</span><span class="tech-pill">MQTT</span></div>
+        <div class="project-links">
+          <a href="projects/iot-monitor/index.html" class="project-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Live Demo</a>
+          <a href="https://github.com/sazzadmahfuz/iot-smart-monitor" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>Source</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RPA Dashboard -->
+    <div class="project-card reveal">
+      <div class="project-preview"><canvas id="rpa-preview"></canvas></div>
+      <div class="project-body">
+        <div class="project-tag">Automation · Robocorp · HAMK</div>
         <h3 class="project-title">RPA Process Automation Dashboard</h3>
-        <p class="project-desc">Robotic Process Automation monitoring dashboard built with Python/Robocorp. Tracks task runs, success rates, exceptions, and time saved across multiple automation workflows.</p>
-        <div class="project-stack">
-          <span class="tech-pill">Python</span><span class="tech-pill">Robocorp</span><span class="tech-pill">RPA</span><span class="tech-pill">Chart.js</span><span class="tech-pill">JSON</span>
-        </div>
+        <p class="project-desc">Robocorp-style monitoring prototype tracking 6 automation bots — success rate, exceptions, hourly throughput, and time saved — with a live event log and per-workflow status table. Reflects rpaframework task architecture (@task decorator, robot.yaml). Robocorp Python certified (ID: d38fbb43).</p>
+        <div class="project-stack"><span class="tech-pill">Python</span><span class="tech-pill">Robocorp</span><span class="tech-pill">RPA</span><span class="tech-pill">Chart.js</span></div>
         <div class="project-links">
-          <a href="https://sazzadmahfuz.github.io/rpa-automation-dashboard/" class="project-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Live Demo
-          </a>
-          <a href="https://github.com/sazzadmahfuz/rpa-automation-dashboard" target="_blank" class="project-link">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            Source
-          </a>
+          <a href="projects/rpa-dashboard/index.html" class="project-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Live Demo</a>
+          <a href="https://github.com/sazzadmahfuz/rpa-automation-dashboard" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>Source</a>
         </div>
       </div>
     </div>
 
-    <!-- P4: Network Topology -->
+    <!-- CCNA Network Topology -->
     <div class="project-card reveal">
-      <div class="project-preview">
-        <canvas id="net-preview"></canvas>
-      </div>
+      <div class="project-preview"><canvas id="net-preview"></canvas></div>
       <div class="project-body">
-        <div class="project-tag">Networking · Course Project</div>
+        <div class="project-tag">Networking · Cisco CCNA · HAMK</div>
         <h3 class="project-title">CCNA Network Topology Analyzer</h3>
-        <p class="project-desc">Interactive network topology builder and analyzer. Drag-and-drop routers, switches, and hosts. Visualise routing tables, simulate ping between nodes, and highlight shortest paths using Dijkstra's algorithm.</p>
-        <div class="project-stack">
-          <span class="tech-pill">JavaScript</span><span class="tech-pill">Dijkstra</span><span class="tech-pill">CCNA</span><span class="tech-pill">SVG</span><span class="tech-pill">Networking</span>
-        </div>
+        <p class="project-desc">Interactive network topology builder. Drag-and-drop routers, switches, and hosts; assign link costs. Dijkstra's shortest-path (the basis of OSPF) highlights optimal routes. Includes per-node routing tables, ICMP ping simulation, and RFC 1918 IPv4 addressing — CCNA exam concepts applied directly.</p>
+        <div class="project-stack"><span class="tech-pill">JavaScript</span><span class="tech-pill">Dijkstra</span><span class="tech-pill">CCNA</span><span class="tech-pill">Canvas API</span></div>
         <div class="project-links">
-          <a href="https://sazzadmahfuz.github.io/ccna-network-analyzer/" class="project-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Live Demo
-          </a>
-          <a href="https://github.com/sazzadmahfuz/ccna-network-analyzer" target="_blank" class="project-link">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            Source
-          </a>
+          <a href="projects/network-topology/index.html" class="project-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Live Demo</a>
+          <a href="https://github.com/sazzadmahfuz/ccna-network-analyzer" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>Source</a>
         </div>
       </div>
     </div>
-  </div>
+
+  </div><!-- /course grid -->
 </section>
 
 <!-- CERTIFICATIONS -->
@@ -425,9 +369,9 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
     <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(0,255,209,.1)">🤖</div><div><div class="cert-issuer">Universal Robots Academy</div><div class="cert-name">e-Series Pro Track</div><div class="cert-date">Apr 2025</div></div></div>
     <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(0,255,209,.1)">🤖</div><div><div class="cert-issuer">Universal Robots Academy</div><div class="cert-name">e-Series Application Track</div><div class="cert-date">Apr 2025</div></div></div>
     <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(0,255,209,.1)">🤖</div><div><div class="cert-issuer">Universal Robots Academy</div><div class="cert-name">e-Series Core Track</div><div class="cert-date">Apr 2025</div></div></div>
-    <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(20,99,255,.15)">🌐</div><div><div class="cert-issuer">Cisco / HAMK</div><div class="cert-name">CCNA: Introduction to Networks</div><div class="cert-date">Mar 2025</div></div></div>
-    <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(123,97,255,.15)">🐍</div><div><div class="cert-issuer">Robocorp</div><div class="cert-name">Python Automation Certification</div><div class="cert-date">Nov 2024 · ID: d38fbb43</div></div></div>
-    <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(59,130,246,.1)">📊</div><div><div class="cert-issuer">Simplilearn SkillUp</div><div class="cert-name">Data Science with Python</div><div class="cert-date">Nov 2023 · Code: 4626023</div></div></div>
+    <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(20,99,255,.15)">🌐</div><div><div class="cert-issuer">Cisco / HAMK Networking Academy</div><div class="cert-name">CCNA: Introduction to Networks</div><div class="cert-date">Mar 2025</div></div></div>
+    <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(123,97,255,.15)">🐍</div><div><div class="cert-issuer">Robocorp</div><div class="cert-name">Python Automation Certificate</div><div class="cert-date">Nov 2024 · ID: d38fbb43</div></div></div>
+    <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(59,130,246,.15)">📊</div><div><div class="cert-issuer">Simplilearn SkillUp</div><div class="cert-name">Data Science with Python</div><div class="cert-date">Nov 2023 · Code: 4626023</div></div></div>
     <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(123,97,255,.1)">🏗️</div><div><div class="cert-issuer">Udemy</div><div class="cert-name">Software Architecture</div><div class="cert-date">Nov 2023 · UC-1210a96e</div></div></div>
     <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(255,200,0,.1)">🛡️</div><div><div class="cert-issuer">Finland</div><div class="cert-name">Occupational Safety Card</div><div class="cert-date">Valid to Mar 2030</div></div></div>
   </div>
@@ -442,16 +386,16 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
   <div class="timeline reveal">
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="tl-date">Aug 2024 — Jul 2028 (expected)</div>
-      <div class="tl-title">BEng in ICT, Robotics — EQF Level 6</div>
-      <div class="tl-sub">Häme University of Applied Sciences (HAMK) · Riihimäki, Finland ·</div>
-      <div class="tl-tags"><span class="tl-tag">Collaborative Robotics</span><span class="tl-tag">Machine Vision</span><span class="tl-tag">IoT</span><span class="tl-tag">Machine Learning</span><span class="tl-tag">Linux</span><span class="tl-tag">OOP</span><span class="tl-tag">CCNA</span></div>
+      <div class="tl-date">Aug 2024 &mdash; Jul 2028 (expected)</div>
+      <div class="tl-title">BEng in ICT, Robotics &mdash; EQF Level 6</div>
+      <div class="tl-sub">Häme University of Applied Sciences (HAMK) · Riihimäki, Finland · 156 / 240 credits</div>
+      <div class="tl-tags"><span class="tl-tag">Collaborative Robotics</span><span class="tl-tag">Machine Vision</span><span class="tl-tag">IoT</span><span class="tl-tag">Machine Learning</span><span class="tl-tag">Linux</span><span class="tl-tag">OOP</span><span class="tl-tag">CCNA</span><span class="tl-tag">Database Design</span></div>
     </div>
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="tl-date">2017 — 2019</div>
-      <div class="tl-title">Higher Secondary School Certificate</div>
-      <div class="tl-sub">Tamirul Millat Kamil Madrasah · Dhaka, Bangladesh</div>
+      <div class="tl-date">Jun 2017 &mdash; Apr 2019</div>
+      <div class="tl-title">Higher Secondary School Certificate &mdash; EQF Level 4</div>
+      <div class="tl-sub">Tamirul Millat Kamil Madrasah · Dhaka, Bangladesh · GPA 5.00 / 5.00</div>
     </div>
   </div>
 </section>
@@ -482,7 +426,7 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
 </section>
 
 <footer>
-  <div>Built by Sazzad Ibna Mahfuz · Helsinki, Finland · 2025</div>
+  <div>Built by Sazzad Ibna Mahfuz · Helsinki, Finland · 2026</div>
   <div style="margin-top:.5rem;color:rgba(125,133,144,.5)">// ICT &amp; Robotics Engineering · HAMK Häme University of Applied Sciences</div>
 </footer>
 
@@ -516,7 +460,7 @@ function drawBg(){
 window.addEventListener('resize',resize);resize();drawBg();
 
 // ── TYPING EFFECT ──
-const phrases=['BEng Student · ICT & Robotics','Universal Robots Certified','Robotic Process Automation Dev','Collaborative Robotics Enthusiast','CCNA Networking Engineer'];
+const phrases=['BEng Student · ICT & Robotics','Universal Robots Certified (Core · Application · Pro)','Robotic Welder · K. Hartwall Oy, Helsinki','Machine Vision & PLC Automation','Open to Thesis & Internship Opportunities'];
 let pi=0,ci=0,deleting=false;
 const el=document.getElementById('typed');
 function type(){
@@ -675,137 +619,91 @@ counters.forEach(c=>cio.observe(c));
   }draw();
 })();
 
-// ── NEW PREVIEW: Control Systems ──
+// Control Systems — state machine preview
 (function(){
   const c=document.getElementById('ctrl-preview');if(!c)return;
   c.width=c.offsetWidth||500;c.height=200;
   const ctx=c.getContext('2d');
-  const states=['Idle','ReqP2','WaitP2','Cooling','ReqP3','WaitP3','Done','Fault'];
+  const states=['Idle','Req P2','Wait P2','Cooling','Req P3','Wait P3','Done','Fault'];
+  const cols=['#00FFD1','#7B61FF','#F59E0B','#00FFD1','#7B61FF','#F59E0B','#00FFD1','#EF4444'];
   let cur=0,t=0,temp=24;
   function draw(){
     ctx.fillStyle='#0D1117';ctx.fillRect(0,0,c.width,200);
-    ctx.strokeStyle='rgba(0,255,209,.03)';ctx.lineWidth=1;
+    ctx.strokeStyle='rgba(0,255,209,.04)';ctx.lineWidth=1;
     for(let x=0;x<c.width;x+=50){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,200);ctx.stroke()}
     for(let y=0;y<200;y+=50){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(c.width,y);ctx.stroke()}
-    const cols=['#22C55E','#7B61FF','#F59E0B','#3B82F6','#7B61FF','#F59E0B','#22C55E','#EF4444'];
-    const W=c.width,H=200,bw=W/states.length;
+    const bw=Math.floor((c.width-20)/states.length)-2,sx=10;
     states.forEach((s,i)=>{
-      const x=i*bw+4,y=60,w=bw-8,h=50;
-      ctx.fillStyle=i===cur?cols[i]+'33':'rgba(255,255,255,.04)';ctx.fillRect(x,y,w,h);
-      ctx.strokeStyle=i===cur?cols[i]:'rgba(255,255,255,.1)';ctx.lineWidth=i===cur?2:1;ctx.strokeRect(x,y,w,h);
-      ctx.fillStyle=i===cur?'#fff':cols[i]+'88';ctx.font=`${i===cur?'bold ':''}9px JetBrains Mono,monospace`;ctx.textAlign='center';ctx.fillText(s,x+w/2,y+h/2+4);
-      if(i<states.length-1){ctx.fillStyle='rgba(0,255,209,.4)';ctx.font='12px sans-serif';ctx.textAlign='center';ctx.fillText('→',x+w+4,y+h/2+5);}
+      const x=sx+i*(bw+2),y=68,h=52,active=i===cur;
+      ctx.fillStyle=active?cols[i]+'28':'rgba(255,255,255,.03)';ctx.fillRect(x,y,bw,h);
+      ctx.strokeStyle=active?cols[i]:'rgba(255,255,255,.07)';ctx.lineWidth=active?1.5:1;ctx.strokeRect(x,y,bw,h);
+      ctx.fillStyle=active?'#fff':cols[i]+'55';
+      ctx.font=`${active?'bold ':''}8px JetBrains Mono,monospace`;ctx.textAlign='center';
+      ctx.fillText(s,x+bw/2,y+h/2+3);
     });
-    // temp
-    ctx.fillStyle='#00FFD1';ctx.font='bold 18px Orbitron,monospace';ctx.textAlign='left';ctx.fillText(temp.toFixed(1)+'°C',12,28);
-    ctx.fillStyle='rgba(125,133,144,.6)';ctx.font='9px JetBrains Mono,monospace';ctx.fillText('LM35 SENSOR',12,44);
-    ctx.fillStyle='rgba(245,158,11,.8)';ctx.font='9px JetBrains Mono,monospace';ctx.textAlign='right';ctx.fillText('Setpoint: 8.0°C',W-12,28);
-    t++;if(t%80===0){cur=(cur+1)%states.length;}
-    if(cur===3)temp=Math.max(7.5,temp-0.3);else if(cur===0||cur===6)temp=Math.min(24,temp+0.1);
+    ctx.fillStyle='#00FFD1';ctx.font='bold 18px Orbitron,monospace';ctx.textAlign='left';ctx.fillText(temp.toFixed(1)+'°C',12,32);
+    ctx.fillStyle='rgba(125,133,144,.6)';ctx.font='9px JetBrains Mono,monospace';ctx.fillText('LM35 · setpoint 8.0°C',12,48);
+    ctx.fillStyle=cols[cur];ctx.font='9px JetBrains Mono,monospace';ctx.textAlign='right';ctx.fillText(states[cur].toUpperCase(),c.width-12,32);
+    t++;if(t%90===0)cur=(cur+1)%states.length;
+    if(cur===3)temp=Math.max(7.5,temp-.22);else if(cur===0||cur===6)temp=Math.min(24,temp+.07);
     ctx.textAlign='left';requestAnimationFrame(draw);
   }draw();
 })();
 
-// ── NEW PREVIEW: Machine Vision ──
+// Machine Vision — pipeline steps
 (function(){
   const c=document.getElementById('vision-preview');if(!c)return;
   c.width=c.offsetWidth||500;c.height=200;
   const ctx=c.getContext('2d');
-  const objs=[{x:.1,y:.15,w:.15,h:.25,col:'#F1C40F'},{x:.32,y:.2,w:.12,h:.12,col:'#8B4513'},{x:.52,y:.1,w:.13,h:.22,col:'#EF4444'},{x:.7,y:.18,w:.11,h:.13,col:'#3B82F6'}];
-  let step=0,t=0,detected=false;
+  const objs=[{x:.06,y:.12,w:.18,h:.28,col:'#F1C40F'},{x:.31,y:.18,w:.14,h:.14,col:'#8B4513'},{x:.52,y:.08,w:.16,h:.26,col:'#EF4444'},{x:.72,y:.16,w:.13,h:.15,col:'#00FFD1'}];
+  let step=0,t=0;const labels=['Original','Grayscale','Threshold','Detected'];
   function draw(){
-    const W=c.width,H=200;
+    const W=c.width,H=200,sw=W/4;
     ctx.fillStyle='#0D1117';ctx.fillRect(0,0,W,H);
-    const steps=['Original','Grayscale','Threshold','Detected'];
-    const sw=W/4;
-    objs.forEach(o=>{
-      if(step===0){ctx.fillStyle=o.col;ctx.fillRect(o.x*sw,o.y*H,o.w*sw,o.h*H);}
-    });
-    if(step>=1){ctx.fillStyle='rgba(180,180,180,.9)';objs.forEach(o=>ctx.fillRect(sw+o.x*sw,o.y*H,o.w*sw,o.h*H));}
-    if(step>=2){ctx.fillStyle='#000';ctx.fillRect(2*sw,0,sw,H);objs.forEach(o=>{ctx.fillStyle='#fff';ctx.fillRect(2*sw+o.x*sw,o.y*H,o.w*sw,o.h*H);});}
-    if(step>=3){
-      objs.forEach(o=>{
-        ctx.fillStyle=o.col+'44';ctx.fillRect(3*sw+o.x*sw,o.y*H,o.w*sw,o.h*H);
-        ctx.strokeStyle='#00FF00';ctx.lineWidth=1.5;ctx.strokeRect(3*sw+o.x*sw-1,o.y*H-1,o.w*sw+2,o.h*H+2);
-        ctx.beginPath();ctx.arc(3*sw+(o.x+o.w/2)*sw,(o.y+o.h/2)*H,3,0,Math.PI*2);ctx.fillStyle='red';ctx.fill();
-      });
-    }
-    // dividers
-    [1,2,3].forEach(i=>{ctx.strokeStyle='rgba(0,255,209,.15)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(i*sw,0);ctx.lineTo(i*sw,H);ctx.stroke();});
-    steps.forEach((s,i)=>{ctx.fillStyle=i===step?'rgba(0,255,209,.9)':'rgba(125,133,144,.5)';ctx.font=`bold 9px JetBrains Mono,monospace`;ctx.textAlign='center';ctx.fillText(s,i*sw+sw/2,H-8);});
-    ctx.textAlign='left';
-    t++;if(t%60===0)step=(step+1)%4;
-    requestAnimationFrame(draw);
+    objs.forEach(o=>{if(step===0){ctx.fillStyle=o.col;ctx.fillRect(o.x*sw,o.y*H,o.w*sw,o.h*H);}});
+    if(step>=1){objs.forEach(o=>{ctx.fillStyle='rgba(155,160,170,.75)';ctx.fillRect(sw+o.x*sw,o.y*H,o.w*sw,o.h*H);});}
+    if(step>=2){ctx.fillStyle='#06080E';ctx.fillRect(2*sw,0,sw,H);objs.forEach(o=>{ctx.fillStyle='#D8E4FF';ctx.fillRect(2*sw+o.x*sw,o.y*H,o.w*sw,o.h*H);});}
+    if(step>=3){objs.forEach(o=>{ctx.strokeStyle='#00FFD1';ctx.lineWidth=1.5;ctx.strokeRect(3*sw+o.x*sw-1,o.y*H-1,o.w*sw+2,o.h*H+2);ctx.beginPath();ctx.arc(3*sw+(o.x+o.w/2)*sw,(o.y+o.h/2)*H,4,0,Math.PI*2);ctx.fillStyle='#7B61FF';ctx.fill();});}
+    [1,2,3].forEach(i=>{ctx.strokeStyle='rgba(0,255,209,.12)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(i*sw,0);ctx.lineTo(i*sw,H);ctx.stroke();});
+    labels.forEach((s,i)=>{ctx.fillStyle=i===step?'rgba(0,255,209,.9)':'rgba(77,85,104,.6)';ctx.font=`${i===step?'bold ':''}8px JetBrains Mono,monospace`;ctx.textAlign='center';ctx.fillText(s,i*sw+sw/2,H-8);});
+    ctx.textAlign='left';t++;if(t%72===0)step=(step+1)%4;requestAnimationFrame(draw);
   }draw();
 })();
 
-// ── NEW PREVIEW: Database ──
-(function(){
-  const c=document.getElementById('db-preview');if(!c)return;
-  c.width=c.offsetWidth||500;c.height=200;
-  const ctx=c.getContext('2d');
-  const tables=[{name:'STUDENT',x:.05,y:.1,c:'#00FFD1'},{name:'ENROLLMENT',x:.38,y:.55,c:'#EF4444'},{name:'COURSE',x:.65,y:.1,c:'#3B82F6'},{name:'INSTRUCTOR',x:.65,y:.6,c:'#7B61FF'}];
-  const links=[[0,1],[1,2],[2,3]];
-  let t=0,activeLink=0;
-  function draw(){
-    const W=c.width,H=200;
-    ctx.fillStyle='#0D1117';ctx.fillRect(0,0,W,H);
-    ctx.strokeStyle='rgba(245,158,11,.03)';ctx.lineWidth=1;
-    for(let x=0;x<W;x+=50){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}
-    links.forEach(([a,b],i)=>{
-      const ta=tables[a],tb=tables[b];
-      const ax=ta.x*W+40,ay=ta.y*H+18,bx=tb.x*W,by=tb.y*H+18;
-      ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.strokeStyle=i===activeLink?'rgba(0,255,209,.7)':'rgba(100,120,150,.2)';ctx.lineWidth=i===activeLink?2:1;ctx.stroke();
-    });
-    tables.forEach(t2=>{
-      const x=t2.x*W,y=t2.y*H,w=80,h=36;
-      ctx.fillStyle=t2.c+'22';ctx.strokeStyle=t2.c;ctx.lineWidth=1.5;ctx.fillRect(x,y,w,h);ctx.strokeRect(x,y,w,h);
-      ctx.fillStyle='#fff';ctx.font='bold 9px JetBrains Mono,monospace';ctx.textAlign='center';ctx.fillText(t2.name,x+w/2,y+h/2+4);
-    });
-    // SQL text
-    const sqls=[
-  'SELECT * FROM students;',
-  'JOIN enrollment ON StudentID',
-  'GROUP BY CourseName;',
-  "WHERE Grade = 'A'"
-];
-    ctx.fillStyle='rgba(0,255,209,.8)';ctx.font='10px JetBrains Mono,monospace';ctx.textAlign='left';ctx.fillText('mysql> '+sqls[activeLink],12,H-15);
-    t++;if(t%70===0)activeLink=(activeLink+1)%links.length;
-    ctx.textAlign='left';requestAnimationFrame(draw);
-  }draw();
-})();
-
-// ── NEW PREVIEW: Machine Learning ──
+// Machine Learning — k-opt chart
 (function(){
   const c=document.getElementById('ml-preview');if(!c)return;
   c.width=c.offsetWidth||500;c.height=200;
   const ctx=c.getContext('2d');
-  const kAccs=[.826,.826,.836,.836,.843,.843,.850,.843,.843,.836,.836,.830,.830,.830,.830,.830,.830,.824,.824,.824];
-  let t=0,animK=0;
+  const accs=[.826,.826,.836,.836,.843,.843,.850,.843,.843,.836,.836,.830,.830,.830,.830,.830,.830,.824,.824,.824];
+  let t=0,ak=0;
+  function draw(){
+    const W=c.width,H=200,px=50,py=20,pw=W-66,ph=130;
+    ctx.fillStyle='#0D1117';ctx.fillRect(0,0,W,H);
+    ctx.strokeStyle='rgba(255,255,255,.05)';ctx.lineWidth=1;ctx.strokeRect(px,py,pw,ph);
+    if(ak>0){ctx.beginPath();accs.slice(0,ak+1).forEach((v,i)=>{const x=px+i*(pw/19),y=py+ph-(v-.78)/.09*ph;i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});ctx.strokeStyle='#00FFD1';ctx.lineWidth=2;ctx.stroke();}
+    if(ak>=6){const bx=px+6*(pw/19),by=py+ph-(.85-.78)/.09*ph;ctx.beginPath();ctx.arc(bx,by,5,0,Math.PI*2);ctx.fillStyle='#7B61FF';ctx.fill();ctx.fillStyle='#fff';ctx.font='bold 8px JetBrains Mono,monospace';ctx.textAlign='center';ctx.fillText('k=7 · 85%',bx,by-10);}
+    ctx.fillStyle='#7B61FF';ctx.font='bold 14px Orbitron,monospace';ctx.textAlign='left';ctx.fillText('KNN K-OPT',14,16);
+    ctx.fillStyle='rgba(125,133,144,.6)';ctx.font='9px JetBrains Mono,monospace';ctx.fillText(`k=${ak+1}  acc=${(accs[Math.min(ak,19)]*100).toFixed(1)}%`,14,H-10);
+    t++;if(t%9===0&&ak<19)ak++;else if(ak>=19)ak=0;ctx.textAlign='left';requestAnimationFrame(draw);
+  }draw();
+})();
+
+// Database ER
+(function(){
+  const c=document.getElementById('db-preview');if(!c)return;
+  c.width=c.offsetWidth||500;c.height=200;
+  const ctx=c.getContext('2d');
+  const tables=[{n:'STUDENT',x:.05,y:.1,col:'#00FFD1'},{n:'ENROLL',x:.38,y:.56,col:'#EF4444'},{n:'COURSE',x:.65,y:.1,col:'#9D85FF'},{n:'INSTRUCTOR',x:.65,y:.6,col:'#7B61FF'}];
+  const links=[[0,1],[1,2],[2,3]];let t=0,al=0;
+  const sqls=['SELECT * FROM students','JOIN enrollment ON StudentID','GROUP BY CourseName','WHERE Grade = "A"'];
   function draw(){
     const W=c.width,H=200;
     ctx.fillStyle='#0D1117';ctx.fillRect(0,0,W,H);
-    ctx.strokeStyle='rgba(123,97,255,.04)';ctx.lineWidth=1;
-    for(let x=0;x<W;x+=50){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}
-    for(let y=0;y<H;y+=40){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}
-    // plot k vs accuracy
-    const plotX=60,plotW=W-80,plotY=20,plotH=130;
-    ctx.strokeStyle='rgba(255,255,255,.08)';ctx.lineWidth=1;
-    ctx.strokeRect(plotX,plotY,plotW,plotH);
-    // line
-    ctx.beginPath();
-    kAccs.slice(0,animK+1).forEach((v,i)=>{
-      const x=plotX+i*(plotW/19),y=plotY+plotH-(v-.78)/(0.09)*plotH;
-      i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
-    });
-    ctx.strokeStyle='#00FFD1';ctx.lineWidth=2;ctx.stroke();
-    // best point
-    if(animK>=6){const bx=plotX+6*(plotW/19),by=plotY+plotH-(.85-.78)/(0.09)*plotH;ctx.beginPath();ctx.arc(bx,by,6,0,Math.PI*2);ctx.fillStyle='#FF0080';ctx.fill();ctx.fillStyle='#fff';ctx.font='bold 9px JetBrains Mono,monospace';ctx.textAlign='center';ctx.fillText('K=7 (85%)',bx,by-10);}
-    ctx.fillStyle='#7B61FF';ctx.font='bold 14px Orbitron,monospace';ctx.textAlign='left';ctx.fillText('KNN K-OPT',12,22);
-    ctx.fillStyle='rgba(125,133,144,.6)';ctx.font='9px JetBrains Mono,monospace';ctx.fillText('accuracy vs k value',12,38);
-    ctx.fillStyle='rgba(0,255,209,.8)';ctx.fillText(`K=${animK+1}  acc=${(kAccs[Math.min(animK,19)]*100).toFixed(1)}%`,12,H-12);
-    t++;if(t%8===0&&animK<19)animK++;else if(animK>=19)animK=0;
-    ctx.textAlign='left';requestAnimationFrame(draw);
+    links.forEach(([a,b],i)=>{const ta=tables[a],tb=tables[b];ctx.beginPath();ctx.moveTo(ta.x*W+44,ta.y*H+18);ctx.lineTo(tb.x*W,tb.y*H+18);ctx.strokeStyle=i===al?'rgba(0,255,209,.6)':'rgba(255,255,255,.08)';ctx.lineWidth=i===al?1.5:1;ctx.stroke();});
+    tables.forEach(tb=>{const x=tb.x*W,y=tb.y*H,w=82,h=36;ctx.fillStyle=tb.col+'18';ctx.strokeStyle=tb.col+'55';ctx.lineWidth=1.2;ctx.fillRect(x,y,w,h);ctx.strokeRect(x,y,w,h);ctx.fillStyle='#E6EDF3';ctx.font='bold 8px JetBrains Mono,monospace';ctx.textAlign='center';ctx.fillText(tb.n,x+w/2,y+h/2+3);});
+    ctx.fillStyle='rgba(0,255,209,.7)';ctx.font='9px JetBrains Mono,monospace';ctx.textAlign='left';ctx.fillText('mysql> '+sqls[al],10,H-10);
+    t++;if(t%78===0)al=(al+1)%links.length;ctx.textAlign='left';requestAnimationFrame(draw);
   }draw();
 })();
 
