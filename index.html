@@ -1,150 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sazzad Ibna Mahfuz</title>
-<meta name="description" content="Sazzad Ibna Mahfuz, ICT and robotics engineering student at HAMK, Finland. Robot cells, machine vision and PLC control.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sazzad Ibna Mahfuz · Robotics & ICT Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--text:#1d1d1f;--muted:#5f6368;--line:#e3e3e3;--link:#0b57d0;--bg:#fff;--soft:#f6f6f6}
-@media (prefers-color-scheme:dark){:root{--text:#e8e8e8;--muted:#a0a0a0;--line:#2e2e2e;--link:#8ab4f8;--bg:#121212;--soft:#1c1c1c}}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-main{max-width:760px;margin:0 auto;padding:56px 24px 80px}
-a{color:var(--link);text-decoration:none}
-a:hover{text-decoration:underline}
-h1{font-size:2rem;line-height:1.2;margin:0 0 6px;letter-spacing:-.01em}
-h2{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:56px 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line)}
-h3{font-size:1.15rem;margin:0 0 2px}
-p{margin:0 0 12px}
-.lead{color:var(--muted);margin-bottom:14px}
-.links a{margin-right:18px}
-.meta{color:var(--muted);font-size:.9rem;margin-bottom:12px}
-.project{margin-bottom:48px}
-figure{margin:16px 0}
-figure img{width:100%;height:auto;display:block;border-radius:4px;background:var(--soft)}
-figcaption{color:var(--muted);font-size:.85rem;margin-top:6px}
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.pair figure{margin:0}
-table{border-collapse:collapse;width:100%;font-size:.95rem;margin:12px 0}
-td{padding:6px 0;border-bottom:1px solid var(--line);vertical-align:top}
-td:first-child{color:var(--muted);width:46%;padding-right:12px}
-ul{padding-left:20px;margin:0 0 12px}
-li{margin-bottom:4px}
-.row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.row .when{color:var(--muted);font-size:.9rem;white-space:nowrap}
-.entry{margin-bottom:22px}
-.cert{display:flex;justify-content:space-between;gap:16px;padding:6px 0;border-bottom:1px solid var(--line);font-size:.95rem}
-.cert span:last-child{color:var(--muted);white-space:nowrap}
-footer{color:var(--muted);font-size:.85rem;margin-top:64px}
-@media (max-width:560px){.pair{grid-template-columns:1fr}h1{font-size:1.7rem}}
+:root {
+  --cyan: #00FFD1;
+  --purple: #7B61FF;
+  --bg: #07090D;
+  --bg2: #0D1117;
+  --bg3: #161B22;
+  --border: rgba(0,255,209,0.15);
+  --text: #E6EDF3;
+  --muted: #7D8590;
+  --card: rgba(13,17,23,0.8);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+
+/* ── CANVAS BG ── */
+#bg-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;opacity:.4}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(7,9,13,.85);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border)}
+.nav-logo{font-family:'Orbitron',monospace;font-size:.85rem;color:var(--cyan);letter-spacing:.1em}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.85rem;font-family:'JetBrains Mono',monospace;transition:color .2s}
+.nav-links a:hover{color:var(--cyan)}
+
+/* ── HERO ── */
+#hero{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--cyan);letter-spacing:.2em;margin-bottom:1.5rem;opacity:.8}
+.hero-name{font-family:'Orbitron',monospace;font-size:clamp(2.5rem,6vw,5rem);font-weight:900;line-height:1;background:linear-gradient(135deg,#fff 0%,var(--cyan) 60%,var(--purple) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.5rem}
+.hero-title{font-family:'JetBrains Mono',monospace;font-size:clamp(.9rem,2vw,1.1rem);color:var(--muted);margin-bottom:2rem;min-height:1.6em}
+.cursor{display:inline-block;width:2px;height:1.1em;background:var(--cyan);vertical-align:text-bottom;animation:blink .7s step-end infinite}
+@keyframes blink{50%{opacity:0}}
+.hero-badges{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
+.badge{padding:.35rem .9rem;border:0.5px solid var(--border);border-radius:99px;font-size:.75rem;font-family:'JetBrains Mono',monospace;color:var(--cyan);background:rgba(0,255,209,.05)}
+.hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{padding:.7rem 1.8rem;background:var(--cyan);color:#000;border-radius:6px;text-decoration:none;font-weight:500;font-size:.9rem;transition:all .2s;font-family:'DM Sans',sans-serif}
+.btn-primary:hover{background:#fff;transform:translateY(-2px)}
+.btn-outline{padding:.7rem 1.8rem;border:0.5px solid var(--border);color:var(--cyan);border-radius:6px;text-decoration:none;font-size:.9rem;transition:all .2s}
+.btn-outline:hover{background:rgba(0,255,209,.08);border-color:var(--cyan)}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);font-size:.7rem;color:var(--muted);font-family:'JetBrains Mono',monospace;display:flex;flex-direction:column;align-items:center;gap:.5rem}
+.scroll-line{width:1px;height:40px;background:linear-gradient(var(--cyan),transparent);animation:scrolldown 1.5s ease-in-out infinite}
+@keyframes scrolldown{0%{opacity:0;transform:scaleY(0);transform-origin:top}50%{opacity:1}100%{opacity:0;transform:scaleY(1);transform-origin:bottom}}
+
+/* ── SECTIONS ── */
+section{position:relative;z-index:1;padding:5rem 2rem;max-width:1100px;margin:0 auto}
+.section-header{margin-bottom:3rem}
+.section-eyebrow{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--cyan);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem}
+.section-eyebrow::after{content:'';flex:1;max-width:60px;height:0.5px;background:var(--cyan)}
+.section-title{font-family:'Orbitron',monospace;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;color:var(--text)}
+
+/* ── STATS ── */
+#stats{background:rgba(13,17,23,.6);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:2.5rem 2rem;max-width:100%}
+.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:2rem;text-align:center}
+.stat-num{font-family:'Orbitron',monospace;font-size:2rem;font-weight:700;color:var(--cyan);display:block}
+.stat-label{font-size:.8rem;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-top:.25rem}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+@media(max-width:700px){.about-grid{grid-template-columns:1fr}}
+.about-text p{color:var(--muted);line-height:1.8;margin-bottom:1rem;font-size:.95rem}
+.about-text p strong{color:var(--text)}
+.skills-grid{display:grid;gap:.75rem}
+
+/* ── PROJECTS ── */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(480px,1fr));gap:1.5rem}
+@media(max-width:600px){.projects-grid{grid-template-columns:1fr}}
+.project-card{background:var(--bg3);border:0.5px solid var(--border);border-radius:12px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
+.project-card:hover{border-color:var(--cyan);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.project-preview{height:200px;position:relative;overflow:hidden}
+.project-preview canvas,.project-preview .preview-inner{width:100%;height:100%}
+.preview-inner{display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--cyan);background:var(--bg2);flex-direction:column;gap:.5rem}
+.project-body{padding:1.25rem 1.5rem;flex:1;display:flex;flex-direction:column}
+.project-tag{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--purple);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem}
+.project-title{font-family:'Orbitron',monospace;font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.5rem}
+.project-desc{color:var(--muted);font-size:.85rem;line-height:1.7;flex:1;margin-bottom:1rem}
+.project-stack{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1rem}
+.tech-pill{font-size:.65rem;padding:.2rem .6rem;border-radius:99px;border:0.5px solid rgba(123,97,255,.3);color:var(--purple);font-family:'JetBrains Mono',monospace;background:rgba(123,97,255,.05)}
+.project-links{display:flex;gap:.75rem}
+.project-link{font-size:.78rem;color:var(--cyan);text-decoration:none;font-family:'JetBrains Mono',monospace;display:flex;align-items:center;gap:.3rem;transition:opacity .2s}
+.project-link:hover{opacity:.7}
+.project-link svg{width:14px;height:14px}
+
+/* ── CERTS ── */
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.cert-card{background:var(--bg3);border:0.5px solid var(--border);border-radius:10px;padding:1.25rem;display:flex;gap:1rem;align-items:flex-start;transition:border-color .2s}
+.cert-card:hover{border-color:var(--cyan)}
+.cert-icon-wrap{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem}
+.cert-issuer{font-size:.7rem;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:.2rem}
+.cert-name{font-size:.88rem;color:var(--text);font-weight:500;margin-bottom:.2rem}
+.cert-date{font-size:.7rem;color:var(--cyan);font-family:'JetBrains Mono',monospace}
+
+/* ── TIMELINE ── */
+.timeline{position:relative;padding-left:1.5rem}
+.timeline::before{content:'';position:absolute;left:0;top:.5rem;bottom:.5rem;width:0.5px;background:var(--border)}
+.timeline-item{position:relative;margin-bottom:2rem;padding-left:1.5rem}
+.timeline-dot{position:absolute;left:-1.75rem;top:.45rem;width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.tl-date{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--cyan);margin-bottom:.3rem}
+.tl-title{font-size:.95rem;font-weight:500;color:var(--text);margin-bottom:.15rem}
+.tl-sub{font-size:.8rem;color:var(--muted)}
+.tl-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.5rem}
+.tl-tag{font-size:.62rem;padding:.15rem .5rem;border-radius:99px;background:rgba(0,255,209,.06);border:0.5px solid rgba(0,255,209,.2);color:var(--cyan);font-family:'JetBrains Mono',monospace}
+
+/* ── CONTACT ── */
+.contact-card{background:var(--bg3);border:0.5px solid var(--border);border-radius:12px;padding:3rem;text-align:center}
+.contact-card p{color:var(--muted);margin-bottom:2rem;line-height:1.7;max-width:500px;margin-left:auto;margin-right:auto}
+.contact-links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.contact-link{display:flex;align-items:center;gap:.5rem;padding:.6rem 1.2rem;border:0.5px solid var(--border);border-radius:8px;color:var(--text);text-decoration:none;font-size:.85rem;transition:all .2s}
+.contact-link:hover{border-color:var(--cyan);color:var(--cyan)}
+.contact-link svg{width:16px;height:16px}
+
+/* ── FOOTER ── */
+footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--muted);position:relative;z-index:1}
+
+
+/* ── FOCUS GRID (replaces skill bars) ── */
+.focus-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+@media(max-width:480px){.focus-grid{grid-template-columns:1fr}}
+.focus-item{background:var(--bg3);border:0.5px solid var(--border);border-radius:8px;padding:.75rem 1rem;transition:border-color .2s}
+.focus-item:hover{border-color:var(--cyan)}
+.focus-area{font-size:.65rem;font-family:'JetBrains Mono',monospace;color:var(--cyan);letter-spacing:.1em;margin-bottom:.4rem;opacity:.85}
+.focus-tags{display:flex;flex-wrap:wrap;gap:.3rem}
+.ftag{font-size:.7rem;color:var(--muted);padding:.12rem .48rem;border-radius:4px;background:rgba(255,255,255,.04)}
+
+/* ── PROJECT CATEGORY LABEL ── */
+.proj-cat-label{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--muted);letter-spacing:.14em;margin:2.5rem 0 1rem;display:flex;align-items:center;gap:.75rem}
+.proj-cat-label::after{content:'';flex:1;height:0.5px;background:var(--border)}
+
+/* ── ANIMATIONS ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* project photos */
+.project-preview{height:260px}
+.project-preview img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.project-card:hover .project-preview img{transform:scale(1.03)}
+.preview-label{position:absolute;left:12px;bottom:12px;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--cyan);background:rgba(7,9,13,.8);border:0.5px solid var(--border);padding:.25rem .55rem;border-radius:6px}
+.project-info{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin:0 0 1rem}
+@media(max-width:600px){.project-info{grid-template-columns:1fr 1fr}}
+.info-item{background:var(--bg2);border:0.5px solid var(--border);border-radius:8px;padding:.55rem .7rem}
+.info-val{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--cyan)}
+.info-key{font-size:.66rem;color:var(--muted);margin-top:.15rem;line-height:1.4}
+.project-role{font-size:.8rem;color:var(--muted);line-height:1.7;margin-bottom:1rem;border-left:2px solid var(--purple);padding-left:.75rem}
+.project-role strong{color:var(--text);font-weight:500}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem;margin-bottom:1rem}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;border:0.5px solid var(--border);cursor:zoom-in;transition:border-color .2s}
+.gallery img:hover{border-color:var(--cyan)}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:200;padding:2rem;flex-direction:column;gap:.75rem;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:100%;max-height:85vh;border-radius:8px}
+.lightbox p{color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:.75rem;text-align:center}
+.cert-icon-wrap{font-family:'JetBrains Mono',monospace;font-size:.7rem !important;font-weight:500;color:var(--cyan)}
 </style>
 </head>
 <body>
-<main>
 
-<header>
-  <h1>Sazzad Ibna Mahfuz</h1>
-  <p class="lead">ICT and robotics engineering student at HAMK University of Applied Sciences. Helsinki, Finland.</p>
-  <p class="links">
-    <a href="Resume.pdf">CV (PDF)</a>
-    <a href="https://github.com/sazzadmahfuz">GitHub</a>
-    <a href="https://www.linkedin.com/in/sazzad-mahfuz">LinkedIn</a>
-    <a href="mailto:sazzadibnamahfuz@gmail.com">Email</a>
-  </p>
-</header>
+<canvas id="bg-canvas"></canvas>
 
+<nav>
+  <div class="nav-logo">portfolio.exe</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certs</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div>
+    <div class="hero-tag">// Robotics &amp; ICT Engineering</div>
+    <h1 class="hero-name">Sazzad Ibna<br>Mahfuz</h1>
+    <p class="hero-title"><span id="typed"></span><span class="cursor"></span></p>
+    <div class="hero-badges">
+      <span class="badge">Universal Robots Certified</span>
+      <span class="badge">Cisco CCNA</span>
+      <span class="badge">Robocorp Python</span>
+      <span class="badge">HAMK University of Applied Sciences</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="https://sazzadmahfuz.github.io/Resume.pdf" target="_blank" class="btn-outline">View CV ↗</a>
+      <a href="https://sazzadmahfuz.github.io/Resume.pdf" download="Sazzad_Ibna_Mahfuz_CV.pdf" class="btn-outline">Download CV ↓</a>
+      <a href="https://github.com/sazzadmahfuz" target="_blank" class="btn-outline">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/sazzad-mahfuz" target="_blank" class="btn-outline">LinkedIn ↗</a>
+    </div>
+    <div class="scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div id="stats">
+  <div class="stats-inner">
+    <div><span class="stat-num" data-target="3">0</span><div class="stat-label">UR Certifications</div></div>
+    <div><span class="stat-num" data-target="5">0</span><div class="stat-label">Engineering Domains</div></div>
+    <div><span class="stat-num" data-target="10">0</span><div class="stat-label">Months Robotic Welding</div></div>
+    <div><span class="stat-num" data-target="8">0</span><div class="stat-label">Professional Credentials</div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
 <section id="about">
-  <h2>About</h2>
-  <p>I am in the third year of a Bachelor of Engineering in ICT and Robotics at HAMK (156 of 240 credits, graduating 2028). My project work is on robot cells: robot programming, machine vision, PLC control and the Python software that connects them.</p>
-  <p>Alongside my studies I work as a robotic welder at K. Hartwall Oy, running and monitoring robotic welding cells in production. I hold the three Universal Robots e-Series certificates and Cisco CCNA: Introduction to Networks.</p>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-
-  <article class="project">
-    <h3>Gift Box Packing Cell</h3>
-    <div class="meta">Applied Robotics Project II, HAMK · team of three · Oct 2026 to now · <a href="https://github.com/sazzadmahfuz/gift-box-packing-cell">GitHub</a></div>
-    <p>A robot cell that packs Christmas gift boxes: one card and two candies go into each box, then the lid goes on. A Dobot M1 Pro SCARA arm picks with a vacuum cup. One conveyor brings the items and another brings the boxes. A camera with a YOLO model finds the items, and a calibrated homography turns pixel positions into robot coordinates.</p>
-    <p>I wrote the cell control software in Python: device checks, a safety gate the robot must pass before it moves, the pick-and-place cycle, run logging and a browser console for the operator. I also built the RoboDK simulation of the cell. Rashmika Ruwanpathirana led the project and built the conveyors and electronics. Enamul Choton did the vision and calibration.</p>
-    <figure>
-      <img src="assets/img/cell-run-sequence.jpg" alt="Camera pictures from one packing cycle" loading="lazy">
-      <figcaption>Camera pictures from run 20261118_100236: box arrives, items placed, lid on after 64.4 s.</figcaption>
-    </figure>
-    <div class="pair">
-      <figure><img src="assets/img/cell-place-in-box.jpg" alt="Robot placing a candy in the box" loading="lazy"><figcaption>Robot placing a candy in the box.</figcaption></figure>
-      <figure><img src="assets/img/cell-console.jpg" alt="Operator console" loading="lazy"><figcaption>Operator console, overview page.</figcaption></figure>
+  <div class="section-header reveal">
+    <div class="section-eyebrow">01 &mdash; About</div>
+    <h2 class="section-title">Engineering meets Automation</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>I'm a <strong>BEng student in ICT &amp; Robotics</strong> at Häme University of Applied Sciences (HAMK), Finland, with 156 of 240 credits completed — on track to graduate in 2028.</p>
+      <p>Currently working as a <strong>Robotic Welder at K. Hartwall Oy</strong>, operating and monitoring Yaskawa industrial welding systems (two stints: Apr–Sep 2025 and May 2026–present). I hold all three <strong>Universal Robots e-Series certifications</strong> and a <strong>Cisco CCNA</strong> certificate.</p>
+      <p>My background spans RPA with Python/Robocorp, collaborative robotics, IoT architectures, machine vision, Linux systems administration, and OOP — all backed by hands-on coursework and real industry exposure.</p>
     </div>
-    <table>
-      <tr><td>Runs on the real cell (17–18 Nov 2026)</td><td>23</td></tr>
-      <tr><td>Boxes filled and closed</td><td>4, fastest 64.4 s at full speed</td></tr>
-      <tr><td>Camera-to-robot calibration</td><td>0.92 mm mean error</td></tr>
-      <tr><td>YOLO model, validation set</td><td>precision 0.99, recall 1.00</td></tr>
-      <tr><td>Software tests</td><td>549 passing, no hardware needed</td></tr>
-    </table>
-    <p>Still open: the lid step is not reliable yet, and the final goal is to pack while the conveyor keeps moving.</p>
-  </article>
-
-  <article class="project">
-    <h3>Refrigerator Control on a Beckhoff PLC</h3>
-    <div class="meta">Control Systems, HAMK · group of four · spring 2026 · <a href="https://github.com/sazzadmahfuz/control-systems-plc">GitHub</a></div>
-    <p>A refrigerator controller in Structured Text (TwinCAT 3) running on a Beckhoff IPC with EtherCAT I/O. The door switch turns on the light, an alarm starts after the door has been open for 10 s and stays on until it is reset, and the compressor switches around the setpoint with 1 °C hysteresis. The temperature comes from an LM35 sensor on an EL3074 analog input, and a TwinCAT VISU shows the temperature and sets the setpoint.</p>
-    <div class="pair">
-      <figure><img src="assets/img/plc-panel.jpg" alt="Beckhoff IPC and I/O training panel" loading="lazy"><figcaption>Beckhoff IPC, EtherCAT terminals and the I/O panel.</figcaption></figure>
-      <figure><img src="assets/img/plc-visu.jpg" alt="TwinCAT VISU on the lab monitor" loading="lazy"><figcaption>TwinCAT VISU on the lab monitor.</figcaption></figure>
+    <div class="reveal">
+      <div class="focus-grid">
+        <div class="focus-item"><div class="focus-area">Industrial Robotics</div><div class="focus-tags"><span class="ftag">Universal Robots</span><span class="ftag">Yaskawa</span><span class="ftag">RoboDK</span><span class="ftag">Dobot MG400</span></div></div>
+        <div class="focus-item"><div class="focus-area">PLC &amp; Control Systems</div><div class="focus-tags"><span class="ftag">TwinCAT 3</span><span class="ftag">Beckhoff EtherCAT</span><span class="ftag">Structured Text</span></div></div>
+        <div class="focus-item"><div class="focus-area">Machine Vision</div><div class="focus-tags"><span class="ftag">OpenCV</span><span class="ftag">Python</span><span class="ftag">Segmentation</span><span class="ftag">Homography</span></div></div>
+        <div class="focus-item"><div class="focus-area">Programming</div><div class="focus-tags"><span class="ftag">Python</span><span class="ftag">JavaScript</span><span class="ftag">SQL</span><span class="ftag">Java</span></div></div>
+        <div class="focus-item"><div class="focus-area">Networking &amp; IoT</div><div class="focus-tags"><span class="ftag">Cisco CCNA</span><span class="ftag">MQTT</span><span class="ftag">IoT Architectures</span></div></div>
+        <div class="focus-item"><div class="focus-area">Automation &amp; ML</div><div class="focus-tags"><span class="ftag">Robocorp RPA</span><span class="ftag">Scikit-learn</span><span class="ftag">Pandas</span></div></div>
+      </div>
     </div>
-    <figure>
-      <img src="assets/img/plc-scope.jpg" alt="TwinCAT Scope trace of the LM35 in cold water" loading="lazy">
-      <figcaption>TwinCAT Scope, 21 Apr 2026: the LM35 in cold water, from about 24.8 °C to 20.3 °C.</figcaption>
-    </figure>
-  </article>
-</section>
-
-<section id="experience">
-  <h2>Experience</h2>
-  <div class="entry">
-    <div class="row"><strong>Robotic Welder, K. Hartwall Oy (via Bolt.Works Oy)</strong><span class="when">Apr–Sep 2025, May 2026 to now</span></div>
-    <p>Operating and monitoring robotic welding cells in production, MIG welding, end-of-line quality inspection, loading parts into fixtures.</p>
-  </div>
-  <div class="entry">
-    <div class="row"><strong>IELTS Trainer, Farees International Career Counseling, Dhaka</strong><span class="when">Oct 2022 – Jul 2024</span></div>
-    <p>More than 200 hours of listening and reading training, lesson plans for over 30 learners.</p>
   </div>
 </section>
 
-<section id="education">
-  <h2>Education</h2>
-  <div class="entry">
-    <div class="row"><strong>BEng, ICT and Robotics, HAMK, Riihimäki</strong><span class="when">2024 – 2028</span></div>
-    <p>156 of 240 credits. Collaborative robotics, robot kinematics, machine vision, IoT, machine learning, networking.</p>
+<!-- PROJECTS -->
+<section id="projects" style="max-width:1100px">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">02 &mdash; Projects</div>
+    <h2 class="section-title">Projects</h2>
   </div>
-  <div class="entry">
-    <div class="row"><strong>Higher Secondary School Certificate, Dhaka</strong><span class="when">2017 – 2019</span></div>
-    <p>GPA 5.00 / 5.00.</p>
+  <div class="projects-grid">
+
+    <!-- Gift Box Packing Cell -->
+    <div class="project-card reveal">
+      <div class="project-preview"><img src="assets/img/cell.jpg" alt="Gift box packing cell in the HAMK robotics lab" style="object-position:center 55%"><span class="preview-label">HAMK Robotics Lab B118 &middot; real cell</span></div>
+      <div class="project-body">
+        <div class="project-tag">Robotics &middot; Machine Vision &middot; Python &middot; In Progress &middot; <span style="opacity:.6">2026</span></div>
+        <h3 class="project-title">Gift Box Packing Cell</h3>
+        <p class="project-desc">Robot cell built in Applied Robotics Project II that packs Christmas gift boxes: one card and two candies per box, then the lid. A Dobot M1 Pro SCARA picks with a vacuum cup from a stepper-driven object belt and places into boxes on a second belt run by its own Arduino and proximity sensor. A USB camera with a YOLO11n model finds the items, and a camera-to-robot homography turns pixel positions into robot coordinates.</p>
+        <div class="project-info"><div class="info-item"><div class="info-val">64.4 s</div><div class="info-key">fastest full box at 100 % speed</div></div><div class="info-item"><div class="info-val">4 / 23</div><div class="info-key">complete boxes / logged real runs</div></div><div class="info-item"><div class="info-val">0.92 mm</div><div class="info-key">calibration mean error</div></div><div class="info-item"><div class="info-val">0.99 / 1.00</div><div class="info-key">YOLO precision / recall</div></div><div class="info-item"><div class="info-val">549</div><div class="info-key">automated tests, no hardware</div></div><div class="info-item"><div class="info-val">M1 Pro</div><div class="info-key">4-axis SCARA, 400 mm reach</div></div></div>
+        <div class="project-role"><strong>My role:</strong> system architecture, cell control software (device checks, safety gate with a one-time arm token, pick-and-place cycle, run logging, browser operator console), RoboDK simulation, and the supervised runs on the real cell.<br><strong>Team:</strong> Rashmika Ruwanpathirana (conveyors, drivers, Arduino, enclosure), Enamul Choton (vision, YOLO training, calibration).</div>
+        <div class="gallery"><img src="assets/img/cell-run-sequence.jpg" alt="Run 20261118_100236: box arrives, items placed, lid on at 64.4 s" data-caption="Run 20261118_100236: box arrives, items placed, lid on at 64.4 s" loading="lazy"><img src="assets/img/cell-place-in-box.jpg" alt="Robot placing a candy in the box" data-caption="Robot placing a candy in the box" loading="lazy"><img src="assets/img/cell-console.jpg" alt="Operator console, overview page" data-caption="Operator console, overview page" loading="lazy"><img src="assets/img/cell-robodk.jpg" alt="RoboDK station of the cell" data-caption="RoboDK station of the cell" loading="lazy"></div>
+        <div class="project-stack"><span class="tech-pill">Dobot M1 Pro</span><span class="tech-pill">Python</span><span class="tech-pill">YOLO11</span><span class="tech-pill">OpenCV</span><span class="tech-pill">RoboDK</span><span class="tech-pill">Arduino</span></div>
+        <div class="project-links"><a href="https://github.com/sazzadmahfuz/gift-box-packing-cell" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>Source</a></div>
+      </div>
+    </div>
+
+    <!-- PLC -->
+    <div class="project-card reveal">
+      <div class="project-preview"><img src="assets/img/plc-panel.jpg" alt="Beckhoff IPC and I/O training panel"><span class="preview-label">Beckhoff IPC &middot; EtherCAT I/O</span></div>
+      <div class="project-body">
+        <div class="project-tag">PLC &middot; Beckhoff &middot; TwinCAT 3 &middot; HAMK &middot; <span style="opacity:.6">2026</span></div>
+        <h3 class="project-title">Refrigerator Control on a Beckhoff PLC</h3>
+        <p class="project-desc">Refrigerator controller in Structured Text (IEC 61131-3) running on a Beckhoff IPC with real EtherCAT I/O. The door switch drives the interior light, a TON timer raises a door alarm that latches until reset, and the compressor switches around the setpoint with hysteresis. Temperature comes from an LM35 on an EL3074 analog input and is shown on a TwinCAT VISU with a setpoint knob.</p>
+        <div class="project-info"><div class="info-item"><div class="info-val">EL1008/2008/3074</div><div class="info-key">terminals wired and scanned</div></div><div class="info-item"><div class="info-val">10 mV/&deg;C</div><div class="info-key">LM35 on a 0&ndash;10 V input</div></div><div class="info-item"><div class="info-val">10 s</div><div class="info-key">door alarm delay, latched</div></div><div class="info-item"><div class="info-val">&plusmn;1.0 &deg;C</div><div class="info-key">compressor hysteresis</div></div><div class="info-item"><div class="info-val">24.8&rarr;20.3 &deg;C</div><div class="info-key">scope trace, sensor in cold water</div></div><div class="info-item"><div class="info-val">TwinCAT 3</div><div class="info-key">Runtime 4024 on the IPC</div></div></div>
+        <div class="project-role"><strong>Work:</strong> I/O wiring, EtherCAT device scan, mapping GVL variables to the terminals, the ST programs from light control to latched alarm and compressor control, the VISU, and logging the sensor in TwinCAT Scope.<br><strong>Group 7:</strong> Sazzad Ibna Mahfuz, Ahmad Tanveer, Muhammad Taqi, Pramoda Medis.</div>
+        <div class="gallery"><img src="assets/img/plc-scope.jpg" alt="TwinCAT Scope, 21 Apr 2026: LM35 in cold water" data-caption="TwinCAT Scope, 21 Apr 2026: LM35 in cold water" loading="lazy"><img src="assets/img/plc-visu.jpg" alt="TwinCAT VISU on the lab monitor" data-caption="TwinCAT VISU on the lab monitor" loading="lazy"><img src="assets/img/plc-lm35.jpg" alt="LM35 sensor test in cold water" data-caption="LM35 sensor test in cold water" loading="lazy"><img src="assets/img/plc-gvl.jpg" alt="GVL mapped to physical I/O" data-caption="GVL mapped to physical I/O" loading="lazy"></div>
+        <div class="project-stack"><span class="tech-pill">TwinCAT 3</span><span class="tech-pill">Structured Text</span><span class="tech-pill">EtherCAT</span><span class="tech-pill">IEC 61131-3</span><span class="tech-pill">VISU</span></div>
+        <div class="project-links"><a href="https://github.com/sazzadmahfuz/control-systems-plc" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>Source</a></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
+<!-- CERTIFICATIONS -->
 <section id="certifications">
-  <h2>Certifications</h2>
-  <div class="cert"><span>Universal Robots e-Series Core, Application and Pro Track</span><span>Apr 2025</span></div>
-  <div class="cert"><span>Cisco CCNA: Introduction to Networks</span><span>Mar 2025</span></div>
-  <div class="cert"><span>Robocorp Python Automation</span><span>Nov 2024</span></div>
-  <div class="cert"><span>Occupational Safety Card, Finland</span><span>valid to Mar 2030</span></div>
+  <div class="section-header reveal">
+    <div class="section-eyebrow">03 &mdash; Certifications</div>
+    <h2 class="section-title">Licences &amp; Credentials</h2>
+  </div>
+  <div class="certs-grid reveal">
+    <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(0,255,209,.1)">UR</div><div><div class="cert-issuer">Universal Robots Academy</div><div class="cert-name">e-Series Pro Track</div><div class="cert-date">Apr 2025</div></div></div>
+    <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(0,255,209,.1)">UR</div><div><div class="cert-issuer">Universal Robots Academy</div><div class="cert-name">e-Series Application Track</div><div class="cert-date">Apr 2025</div></div></div>
+    <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(0,255,209,.1)">UR</div><div><div class="cert-issuer">Universal Robots Academy</div><div class="cert-name">e-Series Core Track</div><div class="cert-date">Apr 2025</div></div></div>
+    <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(20,99,255,.15)">NET</div><div><div class="cert-issuer">Cisco / HAMK Networking Academy</div><div class="cert-name">CCNA: Introduction to Networks</div><div class="cert-date">Mar 2025</div></div></div>
+    <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(123,97,255,.15)">PY</div><div><div class="cert-issuer">Robocorp</div><div class="cert-name">Python Automation Certificate</div><div class="cert-date">Nov 2024 · ID: d38fbb43</div></div></div>
+    <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(59,130,246,.15)">DS</div><div><div class="cert-issuer">Simplilearn SkillUp</div><div class="cert-name">Data Science with Python</div><div class="cert-date">Nov 2023 · Code: 4626023</div></div></div>
+    <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(123,97,255,.1)">SA</div><div><div class="cert-issuer">Udemy</div><div class="cert-name">Software Architecture</div><div class="cert-date">Nov 2023 · UC-1210a96e</div></div></div>
+    <div class="cert-card"><div class="cert-icon-wrap" style="background:rgba(255,200,0,.1)">OSH</div><div><div class="cert-issuer">Finland</div><div class="cert-name">Occupational Safety Card</div><div class="cert-date">Valid to Mar 2030</div></div></div>
+  </div>
 </section>
 
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">04 &mdash; Education</div>
+    <h2 class="section-title">Academic Background</h2>
+  </div>
+  <div class="timeline reveal">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="tl-date">Aug 2024 &mdash; Jul 2028 (expected)</div>
+      <div class="tl-title">BEng in ICT, Robotics &mdash; EQF Level 6</div>
+      <div class="tl-sub">Häme University of Applied Sciences (HAMK) · Riihimäki, Finland · 156 / 240 credits</div>
+      <div class="tl-tags"><span class="tl-tag">Collaborative Robotics</span><span class="tl-tag">Machine Vision</span><span class="tl-tag">IoT</span><span class="tl-tag">Machine Learning</span><span class="tl-tag">Linux</span><span class="tl-tag">OOP</span><span class="tl-tag">CCNA</span><span class="tl-tag">Database Design</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="tl-date">Jun 2017 &mdash; Apr 2019</div>
+      <div class="tl-title">Higher Secondary School Certificate &mdash; EQF Level 4</div>
+      <div class="tl-sub">Tamirul Millat Kamil Madrasah · Dhaka, Bangladesh · GPA 5.00 / 5.00</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
 <section id="contact">
-  <h2>Contact</h2>
-  <p>I am looking for internships and thesis work in robotics and automation in Finland.</p>
-  <p class="links">
-    <a href="mailto:sazzadibnamahfuz@gmail.com">sazzadibnamahfuz@gmail.com</a>
-    <a href="tel:+358417403018">+358 41 740 3018</a>
-  </p>
+  <div class="section-header reveal">
+    <div class="section-eyebrow">05 &mdash; Contact</div>
+    <h2 class="section-title">Let's Connect</h2>
+  </div>
+  <div class="contact-card reveal">
+    <p>Open to robotics engineering internships, automation roles, and collaborative projects — especially in Finland and the Nordic region. Feel free to reach out.</p>
+    <div class="contact-links">
+      <a href="tel:+358417403018" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.79 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.06 6.06l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+        +358 417403018
+      </a>
+      <a href="mailto:sazzadibnamahfuz@gmail.com" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        sazzadibnamahfuz@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/in/sazzad-mahfuz" target="_blank" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/sazzadmahfuz" target="_blank" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
 </section>
 
-<footer>Sazzad Ibna Mahfuz, 2026</footer>
+<footer>
+  <div>Built by Sazzad Ibna Mahfuz · Helsinki, Finland · 2026</div>
+  <div style="margin-top:.5rem;color:rgba(125,133,144,.5)">// ICT &amp; Robotics Engineering · HAMK University of Applied Sciences</div>
+</footer>
 
-</main>
+<script>
+// ── ANIMATED GRID BACKGROUND ──
+const bgCanvas = document.getElementById('bg-canvas');
+const bgCtx = bgCanvas.getContext('2d');
+let W, H, particles = [];
+function resize(){W=bgCanvas.width=window.innerWidth;H=bgCanvas.height=window.innerHeight;initParticles()}
+function initParticles(){particles=[];for(let i=0;i<60;i++)particles.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*1.5+.5})}
+function drawBg(){
+  bgCtx.clearRect(0,0,W,H);
+  // grid
+  bgCtx.strokeStyle='rgba(0,255,209,0.03)';
+  bgCtx.lineWidth=1;
+  for(let x=0;x<W;x+=60){bgCtx.beginPath();bgCtx.moveTo(x,0);bgCtx.lineTo(x,H);bgCtx.stroke()}
+  for(let y=0;y<H;y+=60){bgCtx.beginPath();bgCtx.moveTo(0,y);bgCtx.lineTo(W,y);bgCtx.stroke()}
+  // particles & connections
+  particles.forEach(p=>{
+    p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0||p.x>W)p.vx*=-1;
+    if(p.y<0||p.y>H)p.vy*=-1;
+    bgCtx.beginPath();bgCtx.arc(p.x,p.y,p.r,0,Math.PI*2);bgCtx.fillStyle='rgba(0,255,209,0.6)';bgCtx.fill();
+  });
+  particles.forEach((a,i)=>particles.slice(i+1).forEach(b=>{
+    const d=Math.hypot(a.x-b.x,a.y-b.y);
+    if(d<120){bgCtx.beginPath();bgCtx.moveTo(a.x,a.y);bgCtx.lineTo(b.x,b.y);bgCtx.strokeStyle=`rgba(0,255,209,${.15*(1-d/120)})`;bgCtx.lineWidth=.5;bgCtx.stroke()}
+  }));
+  requestAnimationFrame(drawBg);
+}
+window.addEventListener('resize',resize);resize();drawBg();
+
+// ── TYPING EFFECT ──
+const phrases=['BEng Student · ICT & Robotics','Universal Robots Certified (Core · Application · Pro)','Robotic Welder · K. Hartwall Oy, Helsinki','Machine Vision & PLC Automation','Open to Thesis & Internship Opportunities'];
+let pi=0,ci=0,deleting=false;
+const el=document.getElementById('typed');
+function type(){
+  const word=phrases[pi];
+  if(!deleting){el.textContent=word.slice(0,++ci);if(ci===word.length){deleting=true;setTimeout(type,1800);return}}
+  else{el.textContent=word.slice(0,--ci);if(ci===0){deleting=false;pi=(pi+1)%phrases.length}}
+  setTimeout(type,deleting?40:80);
+}
+type();
+
+// ── SCROLL REVEAL ──
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}})},{threshold:.1});
+reveals.forEach(r=>io.observe(r));
+
+// ── COUNTER ANIMATION ──
+const counters=document.querySelectorAll('.stat-num[data-target]');
+const cio=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting&&!e.target._done){e.target._done=true;const target=+e.target.dataset.target;let c=0;const step=()=>{c=Math.min(c+Math.ceil(target/40),target);e.target.textContent=c;if(c<target)requestAnimationFrame(step)};step()}})},{threshold:.5});
+counters.forEach(c=>cio.observe(c));
+
+// ── LIGHTBOX ──
+const lb=document.createElement('div');lb.className='lightbox';lb.innerHTML='<img alt=""><p></p>';document.body.appendChild(lb);
+document.querySelectorAll('.gallery img').forEach(i=>i.addEventListener('click',()=>{lb.querySelector('img').src=i.src;lb.querySelector('p').textContent=i.dataset.caption;lb.classList.add('open')}));
+lb.addEventListener('click',()=>lb.classList.remove('open'));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('open')});
+</script>
 </body>
 </html>
