@@ -158,6 +158,11 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
 .lightbox img{max-width:100%;max-height:85vh;border-radius:8px}
 .lightbox p{color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:.75rem;text-align:center}
 .cert-icon-wrap{font-family:'JetBrains Mono',monospace;font-size:.7rem !important;font-weight:500;color:var(--cyan)}
+.project-card[data-href]{cursor:pointer}
+.project-card[data-href]:hover{border-color:var(--cyan)}
+.project-title a{color:inherit;text-decoration:none}
+.project-title a:hover{color:var(--cyan)}
+.project-links{gap:1.25rem}
 </style>
 </head>
 <body>
@@ -245,32 +250,32 @@ footer{border-top:0.5px solid var(--border);padding:2rem;text-align:center;font-
   <div class="projects-grid">
 
     <!-- Gift Box Packing Cell -->
-    <div class="project-card reveal">
+    <div class="project-card reveal" data-href="projects/gift-box-packing-cell.html">
       <div class="project-preview"><img src="assets/img/cell.jpg" alt="Gift box packing cell in the HAMK robotics lab" style="object-position:center 55%"><span class="preview-label">HAMK Robotics Lab B118 &middot; real cell</span></div>
       <div class="project-body">
         <div class="project-tag">Robotics &middot; Machine Vision &middot; Python &middot; In Progress &middot; <span style="opacity:.6">2026</span></div>
-        <h3 class="project-title">Gift Box Packing Cell</h3>
+        <h3 class="project-title"><a href="projects/gift-box-packing-cell.html">Gift Box Packing Cell</a></h3>
         <p class="project-desc">Robot cell built in Applied Robotics Project II that packs Christmas gift boxes: one card and two candies per box, then the lid. A Dobot M1 Pro SCARA picks with a vacuum cup from a stepper-driven object belt and places into boxes on a second belt run by its own Arduino and proximity sensor. A USB camera with a YOLO11n model finds the items, and a camera-to-robot homography turns pixel positions into robot coordinates.</p>
         <div class="project-info"><div class="info-item"><div class="info-val">64.4 s</div><div class="info-key">fastest full box at 100 % speed</div></div><div class="info-item"><div class="info-val">4 / 23</div><div class="info-key">complete boxes / logged real runs</div></div><div class="info-item"><div class="info-val">0.92 mm</div><div class="info-key">calibration mean error</div></div><div class="info-item"><div class="info-val">0.99 / 1.00</div><div class="info-key">YOLO precision / recall</div></div><div class="info-item"><div class="info-val">549</div><div class="info-key">automated tests, no hardware</div></div><div class="info-item"><div class="info-val">M1 Pro</div><div class="info-key">4-axis SCARA, 400 mm reach</div></div></div>
         <div class="project-role"><strong>My role:</strong> system architecture, cell control software (device checks, safety gate with a one-time arm token, pick-and-place cycle, run logging, browser operator console), RoboDK simulation, and the supervised runs on the real cell.<br><strong>Team:</strong> Rashmika Ruwanpathirana (conveyors, drivers, Arduino, enclosure), Enamul Choton (vision, YOLO training, calibration).</div>
         <div class="gallery"><img src="assets/img/cell-run-sequence.jpg" alt="Run 20261118_100236: box arrives, items placed, lid on at 64.4 s" data-caption="Run 20261118_100236: box arrives, items placed, lid on at 64.4 s" loading="lazy"><img src="assets/img/cell-place-in-box.jpg" alt="Robot placing a candy in the box" data-caption="Robot placing a candy in the box" loading="lazy"><img src="assets/img/cell-console.jpg" alt="Operator console, overview page" data-caption="Operator console, overview page" loading="lazy"><img src="assets/img/cell-robodk.jpg" alt="RoboDK station of the cell" data-caption="RoboDK station of the cell" loading="lazy"></div>
         <div class="project-stack"><span class="tech-pill">Dobot M1 Pro</span><span class="tech-pill">Python</span><span class="tech-pill">YOLO11</span><span class="tech-pill">OpenCV</span><span class="tech-pill">RoboDK</span><span class="tech-pill">Arduino</span></div>
-        <div class="project-links"><a href="https://github.com/sazzadmahfuz/gift-box-packing-cell" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>Source</a></div>
+        <div class="project-links"><a href="projects/gift-box-packing-cell.html" class="project-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>View project</a><a href="https://github.com/sazzadmahfuz/gift-box-packing-cell" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>Source</a></div>
       </div>
     </div>
 
     <!-- PLC -->
-    <div class="project-card reveal">
+    <div class="project-card reveal" data-href="projects/plc-refrigerator.html">
       <div class="project-preview"><img src="assets/img/plc-panel.jpg" alt="Beckhoff IPC and I/O training panel"><span class="preview-label">Beckhoff IPC &middot; EtherCAT I/O</span></div>
       <div class="project-body">
         <div class="project-tag">PLC &middot; Beckhoff &middot; TwinCAT 3 &middot; HAMK &middot; <span style="opacity:.6">2026</span></div>
-        <h3 class="project-title">Refrigerator Control on a Beckhoff PLC</h3>
+        <h3 class="project-title"><a href="projects/plc-refrigerator.html">Refrigerator Control on a Beckhoff PLC</a></h3>
         <p class="project-desc">Refrigerator controller in Structured Text (IEC 61131-3) running on a Beckhoff IPC with real EtherCAT I/O. The door switch drives the interior light, a TON timer raises a door alarm that latches until reset, and the compressor switches around the setpoint with hysteresis. Temperature comes from an LM35 on an EL3074 analog input and is shown on a TwinCAT VISU with a setpoint knob.</p>
         <div class="project-info"><div class="info-item"><div class="info-val">EL1008/2008/3074</div><div class="info-key">terminals wired and scanned</div></div><div class="info-item"><div class="info-val">10 mV/&deg;C</div><div class="info-key">LM35 on a 0&ndash;10 V input</div></div><div class="info-item"><div class="info-val">10 s</div><div class="info-key">door alarm delay, latched</div></div><div class="info-item"><div class="info-val">&plusmn;1.0 &deg;C</div><div class="info-key">compressor hysteresis</div></div><div class="info-item"><div class="info-val">24.8&rarr;20.3 &deg;C</div><div class="info-key">scope trace, sensor in cold water</div></div><div class="info-item"><div class="info-val">TwinCAT 3</div><div class="info-key">Runtime 4024 on the IPC</div></div></div>
         <div class="project-role"><strong>Work:</strong> I/O wiring, EtherCAT device scan, mapping GVL variables to the terminals, the ST programs from light control to latched alarm and compressor control, the VISU, and logging the sensor in TwinCAT Scope.<br><strong>Group 7:</strong> Sazzad Ibna Mahfuz, Ahmad Tanveer, Muhammad Taqi, Pramoda Medis.</div>
         <div class="gallery"><img src="assets/img/plc-scope.jpg" alt="TwinCAT Scope, 21 Apr 2026: LM35 in cold water" data-caption="TwinCAT Scope, 21 Apr 2026: LM35 in cold water" loading="lazy"><img src="assets/img/plc-visu.jpg" alt="TwinCAT VISU on the lab monitor" data-caption="TwinCAT VISU on the lab monitor" loading="lazy"><img src="assets/img/plc-lm35.jpg" alt="LM35 sensor test in cold water" data-caption="LM35 sensor test in cold water" loading="lazy"><img src="assets/img/plc-gvl.jpg" alt="GVL mapped to physical I/O" data-caption="GVL mapped to physical I/O" loading="lazy"></div>
         <div class="project-stack"><span class="tech-pill">TwinCAT 3</span><span class="tech-pill">Structured Text</span><span class="tech-pill">EtherCAT</span><span class="tech-pill">IEC 61131-3</span><span class="tech-pill">VISU</span></div>
-        <div class="project-links"><a href="https://github.com/sazzadmahfuz/control-systems-plc" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>Source</a></div>
+        <div class="project-links"><a href="projects/plc-refrigerator.html" class="project-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>View project</a><a href="https://github.com/sazzadmahfuz/control-systems-plc" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>Source</a></div>
       </div>
     </div>
 
@@ -402,6 +407,9 @@ reveals.forEach(r=>io.observe(r));
 const counters=document.querySelectorAll('.stat-num[data-target]');
 const cio=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting&&!e.target._done){e.target._done=true;const target=+e.target.dataset.target;let c=0;const step=()=>{c=Math.min(c+Math.ceil(target/40),target);e.target.textContent=c;if(c<target)requestAnimationFrame(step)};step()}})},{threshold:.5});
 counters.forEach(c=>cio.observe(c));
+
+// ── CLICKABLE CARDS ──
+document.querySelectorAll('.project-card[data-href]').forEach(c=>c.addEventListener('click',e=>{if(e.target.closest('a,.gallery img'))return;location.href=c.dataset.href}));
 
 // ── LIGHTBOX ──
 const lb=document.createElement('div');lb.className='lightbox';lb.innerHTML='<img alt=""><p></p>';document.body.appendChild(lb);
